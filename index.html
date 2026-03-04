@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1Cryptor - Your files. Encrypted. Only you have the key.</title>
+    <meta name="description" content="Secure file encryption with AES-256-GCM, Argon2id, and RSA-4096. Zero knowledge architecture.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <a href="#" class="logo">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="20" cy="20" r="18" stroke="#00FF88" stroke-width="2"/>
+                    <path d="M20 10V16M20 24V30M14 20H10M30 20H26" stroke="#00FF88" stroke-width="2" stroke-linecap="round"/>
+                    <rect x="16" y="16" width="8" height="8" rx="2" stroke="#00FF88" stroke-width="2"/>
+                </svg>
+                <span>1Cryptor</span>
+            </a>
+            <nav class="nav">
+                <a href="#how-it-works">How it works</a>
+                <a href="#technology">Technology</a>
+                <a href="#privacy">Privacy</a>
+                <a href="mailto:contact@1cryptor.com">Contact</a>
+            </nav>
+            <a href="https://apps.apple.com/app/idYOUR_APP_ID" class="btn btn-primary">Download App</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <h1 class="glitch" data-text="Your files. Encrypted. Only you have the key.">Your files. Encrypted.<br>Only you have the key.</h1>
+                    <p class="hero-subtitle">Military-grade encryption for your personal cloud. Zero knowledge, zero compromise.</p>
+                    <div class="hero-actions">
+                        <a href="https://apps.apple.com/app/idYOUR_APP_ID" class="btn btn-primary">Download on the App Store</a>
+                        <a href="#how-it-works" class="btn btn-secondary">Learn how it works</a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="encryption-visualizer">
+                        <div class="lock-icon">
+                            <svg width="120" height="160" viewBox="0 0 120 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M60 10C32.3858 10 10 32.3858 10 60V80H110V60C110 32.3858 87.6142 10 60 10Z" stroke="#00FF88" stroke-width="4"/>
+                                <rect x="10" y="80" width="100" height="70" rx="10" stroke="#00FF88" stroke-width="4" fill="rgba(0, 255, 136, 0.1)"/>
+                                <circle cx="60" cy="115" r="10" fill="#00FF88"/>
+                            </svg>
+                        </div>
+                        <div class="code-stream">
+                            <span>01010101</span>
+                            <span>ENCRYPTED</span>
+                            <span>AES-256</span>
+                            <span>LOCKED</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="how-it-works" class="features">
+            <div class="container">
+                <div class="section-header">
+                    <h2>How It Works</h2>
+                    <p>Your data never leaves your device unencrypted.</p>
+                </div>
+                <div class="feature-grid">
+                    <div class="feature-card" data-aos="fade-up">
+                        <div class="icon">🔒</div>
+                        <h3>Device-Only Encryption</h3>
+                        <p>Encryption happens on your device. Your keys never leave your phone.</p>
+                    </div>
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="icon">☁️</div>
+                        <h3>Your Cloud</h3>
+                        <p>Files are stored in your own iCloud or Google Drive, but fully encrypted by 1Cryptor.</p>
+                    </div>
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="icon">⚡</div>
+                        <h3>Zero Knowledge</h3>
+                        <p>We don't know your password, we don't have your keys, and we can't see your files.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="technology" class="tech-specs">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Technology Stack</h2>
+                    <p>Built with Rust for performance and safety.</p>
+                </div>
+                
+                <div class="tech-grid">
+                    <div class="tech-card" data-aos="fade-right">
+                        <div class="card-header">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                        </div>
+                        <h3>AES-256-GCM</h3>
+                        <div class="code-block">
+                            <p><span class="keyword">let</span> cipher = <span class="type">Aes256Gcm</span>::new(key);</p>
+                            <p><span class="comment">// 12-byte unique nonce per chunk</span></p>
+                            <ul class="tech-details">
+                                <li><span class="property">Algorithm:</span> "AES-256-GCM"</li>
+                                <li><span class="property">Key Size:</span> 256 bits</li>
+                                <li><span class="property">Tag Size:</span> 16 bytes</li>
+                                <li><span class="property">Target:</span> File Content & Names</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="tech-card" data-aos="fade-left">
+                        <div class="card-header">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                        </div>
+                        <h3>Argon2id</h3>
+                        <div class="code-block">
+                            <p><span class="keyword">let</span> params = <span class="type">Argon2</span>::default();</p>
+                            <ul class="tech-details">
+                                <li><span class="property">Memory:</span> 128 MB</li>
+                                <li><span class="property">Iterations:</span> 4</li>
+                                <li><span class="property">Parallelism:</span> 4</li>
+                                <li><span class="property">Output:</span> 32 bytes (Key)</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="tech-card" data-aos="fade-right">
+                        <div class="card-header">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                        </div>
+                        <h3>RSA-4096</h3>
+                        <div class="code-block">
+                            <p><span class="keyword">use</span> rsa::{Oaep, Sha256};</p>
+                            <ul class="tech-details">
+                                <li><span class="property">Key Size:</span> 4096 bits</li>
+                                <li><span class="property">Padding:</span> OAEP-SHA256</li>
+                                <li><span class="property">Usage:</span> Master Key Wrapping</li>
+                                <li><span class="property">Security:</span> ~140 bits equivalent</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="tech-card" data-aos="fade-left">
+                        <div class="card-header">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                        </div>
+                        <h3>Smart Chunking</h3>
+                        <div class="code-block">
+                            <p><span class="keyword">const</span> CHUNK_SIZE: <span class="type">usize</span> = 5 * 1024 * 1024;</p>
+                            <ul class="tech-details">
+                                <li><span class="property">Size:</span> 5 MB</li>
+                                <li><span class="property">Nonce:</span> Unique per chunk</li>
+                                <li><span class="property">Benefit:</span> Random Access</li>
+                                <li><span class="property">Integrity:</span> Per-chunk authentication</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="privacy" class="privacy-summary">
+            <div class="container">
+                <div class="privacy-content">
+                    <h2>Privacy First. Always.</h2>
+                    <p>We believe privacy is a fundamental human right. Here is what we collect and what we don't.</p>
+                    
+                    <div class="privacy-grid">
+                        <div class="privacy-column bad">
+                            <h3>What We DON'T Collect</h3>
+                            <ul>
+                                <li>❌ Your Password</li>
+                                <li>❌ Your Encryption Keys</li>
+                                <li>❌ Your File Content</li>
+                                <li>❌ Your Filenames</li>
+                            </ul>
+                        </div>
+                        <div class="privacy-column good">
+                            <h3>What We DO Collect</h3>
+                            <ul>
+                                <li>✅ Anonymized Crash Reports</li>
+                                <li>✅ App Store Purchase Status</li>
+                                <li>✅ Basic Diagnostic Data</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="privacy-links">
+                        <a href="privacy.html" class="link">Full Privacy Policy &rarr;</a>
+                        <a href="terms.html" class="link">Terms of Service &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <h2>Secure your digital life today.</h2>
+                <p>Get 1Cryptor for free and start encrypting.</p>
+                <a href="https://apps.apple.com/app/idYOUR_APP_ID" class="btn btn-primary btn-large">Download on the App Store</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>1Cryptor</h3>
+                    <p>Your files. Encrypted.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Legal</h4>
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <a href="mailto:contact@1cryptor.com">contact@1cryptor.com</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 1Cryptor. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

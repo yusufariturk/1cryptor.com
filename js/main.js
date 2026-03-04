@@ -106,4 +106,14 @@ document.addEventListener('DOMContentLoaded', () => {
         window.addEventListener('scroll', updateProgress, { passive: true });
         window.addEventListener('resize', updateProgress);
     }
+
+    const chunkItems = document.querySelectorAll('.chunk-item');
+    if (chunkItems.length > 0) {
+        let chunkIndex = 0;
+        setInterval(() => {
+            chunkItems.forEach((item) => item.classList.remove('active'));
+            chunkItems[chunkIndex].classList.add('active');
+            chunkIndex = (chunkIndex + 1) % chunkItems.length;
+        }, 520);
+    }
 });

@@ -27,6 +27,8 @@
             <nav class="nav">
                 <a href="#home">Home</a>
                 <a href="#how-it-works">How It Works</a>
+                <a href="#file-encryption">File Encryption</a>
+                <a href="#video-encryption">Video Encryption</a>
                 <a href="#technology">Technology</a>
                 <a href="#about">About</a>
                 <a href="#privacy">Privacy</a>
@@ -162,6 +164,99 @@
                         <h3>Encrypted Sync</h3>
                         <p>Only encrypted chunks, encrypted names, and encrypted metadata are synced to cloud storage.</p>
                     </article>
+                </div>
+            </div>
+        </section>
+        <section id="file-encryption" class="deep-encryption">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <h2>How Files Are Encrypted</h2>
+                    <p>Every file is protected in layers so confidentiality and integrity stay strong end to end.</p>
+                </div>
+                <div class="deep-grid">
+                    <article class="deep-card" data-aos="fade-right">
+                        <h3>1. Key Derivation</h3>
+                        <p>Your password never becomes an encryption key directly. Argon2id derives a hardened key using 128 MB memory, 4 iterations, and parallel lanes.</p>
+                        <div class="chip-row">
+                            <span class="chip">Argon2id</span>
+                            <span class="chip">Salted</span>
+                            <span class="chip">Memory-Hard</span>
+                        </div>
+                    </article>
+                    <article class="deep-card" data-aos="fade-left">
+                        <h3>2. Master Key Protection</h3>
+                        <p>A random 256-bit master key encrypts your data. This master key is wrapped with RSA-4096 + OAEP-SHA256, so only your private key can unwrap it.</p>
+                        <div class="chip-row">
+                            <span class="chip">RSA-4096</span>
+                            <span class="chip">OAEP-SHA256</span>
+                            <span class="chip">Private Access</span>
+                        </div>
+                    </article>
+                    <article class="deep-card" data-aos="fade-right">
+                        <h3>3. Content Encryption</h3>
+                        <p>Each data block is encrypted with AES-256-GCM using a unique 12-byte nonce and validated with a 16-byte authentication tag.</p>
+                        <div class="chip-row">
+                            <span class="chip">AES-256-GCM</span>
+                            <span class="chip">12B Nonce</span>
+                            <span class="chip">16B Tag</span>
+                        </div>
+                    </article>
+                    <article class="deep-card" data-aos="fade-left">
+                        <h3>4. Metadata Protection</h3>
+                        <p>File names, extensions, and metadata are encrypted too. Storage providers only see encrypted objects, not meaningful labels.</p>
+                        <div class="chip-row">
+                            <span class="chip">Encrypted Names</span>
+                            <span class="chip">Encrypted Metadata</span>
+                            <span class="chip">Zero Knowledge</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <section id="video-encryption" class="video-security">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <h2>How Videos Are Split and Encrypted</h2>
+                    <p>Large videos are chunked into secure parts for speed, reliability, and cryptographic isolation.</p>
+                </div>
+                <div class="video-layout">
+                    <div class="video-explain" data-aos="fade-right">
+                        <div class="video-step">
+                            <span>01</span>
+                            <h3>5 MB Chunking</h3>
+                            <p>A video is split into 5 MB chunks so encryption and upload run in parallel with better resilience on unstable networks.</p>
+                        </div>
+                        <div class="video-step">
+                            <span>02</span>
+                            <h3>Per-Chunk Nonce</h3>
+                            <p>Every chunk gets a fresh nonce before AES-256-GCM encryption. Nonce reuse is prevented by design.</p>
+                        </div>
+                        <div class="video-step">
+                            <span>03</span>
+                            <h3>Per-Chunk Authentication</h3>
+                            <p>Each encrypted part carries its own tag. Modified or corrupted chunks fail authentication immediately.</p>
+                        </div>
+                        <div class="video-step">
+                            <span>04</span>
+                            <h3>Secure Reassembly</h3>
+                            <p>Chunks are validated and decrypted in order, then reassembled only on authorized devices with the right key material.</p>
+                        </div>
+                    </div>
+                    <div class="video-visual" data-aos="fade-left">
+                        <div class="video-canvas">
+                            <div class="video-track" id="video-track">
+                                <div class="chunk-item"><span>Chunk 01</span><em>AES</em></div>
+                                <div class="chunk-item"><span>Chunk 02</span><em>AES</em></div>
+                                <div class="chunk-item"><span>Chunk 03</span><em>AES</em></div>
+                                <div class="chunk-item"><span>Chunk 04</span><em>AES</em></div>
+                                <div class="chunk-item"><span>Chunk 05</span><em>AES</em></div>
+                                <div class="chunk-item"><span>Chunk 06</span><em>AES</em></div>
+                                <div class="chunk-item"><span>Chunk 07</span><em>AES</em></div>
+                                <div class="chunk-item"><span>Chunk 08</span><em>AES</em></div>
+                            </div>
+                            <div class="video-shield">Encrypted Vault Stream</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -316,6 +411,8 @@
                     <h4>Menu</h4>
                     <a href="#home">Home</a>
                     <a href="#how-it-works">How It Works</a>
+                    <a href="#file-encryption">File Encryption</a>
+                    <a href="#video-encryption">Video Encryption</a>
                     <a href="#technology">Technology</a>
                     <a href="#about">About</a>
                     <a href="#download">Download</a>

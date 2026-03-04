@@ -509,6 +509,181 @@ section {
     color: #99bead;
 }
 
+.deep-encryption {
+    padding-top: 2.5rem;
+}
+
+.deep-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.deep-card {
+    border: 1px solid var(--card-border);
+    border-radius: 14px;
+    background: linear-gradient(180deg, rgba(11, 26, 19, 0.78), rgba(8, 18, 13, 0.92));
+    padding: 1.2rem;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.deep-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(0, 255, 136, 0.65);
+    box-shadow: 0 12px 28px rgba(0, 255, 136, 0.12);
+}
+
+.deep-card h3 {
+    margin-bottom: 0.45rem;
+    color: #9dffd2;
+    font-size: 1.2rem;
+}
+
+.deep-card p {
+    color: #9cc2af;
+}
+
+.chip-row {
+    margin-top: 0.85rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+}
+
+.chip {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: #98ffd0;
+    border: 1px solid rgba(0, 255, 136, 0.45);
+    background: rgba(0, 255, 136, 0.08);
+    border-radius: 999px;
+    padding: 0.35rem 0.62rem;
+}
+
+.video-security {
+    padding-top: 2.4rem;
+}
+
+.video-layout {
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+    gap: 1rem;
+    align-items: stretch;
+}
+
+.video-explain {
+    border: 1px solid var(--card-border);
+    border-radius: 14px;
+    background: rgba(10, 20, 15, 0.75);
+    padding: 1rem;
+    display: grid;
+    gap: 0.7rem;
+}
+
+.video-step {
+    border: 1px solid rgba(89, 136, 111, 0.4);
+    border-radius: 12px;
+    padding: 0.85rem;
+    background: rgba(9, 21, 15, 0.8);
+}
+
+.video-step span {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: #7bf7c1;
+}
+
+.video-step h3 {
+    margin: 0.25rem 0 0.25rem;
+    color: #a4ffd5;
+    font-size: 1.05rem;
+}
+
+.video-step p {
+    color: #97bcaa;
+    font-size: 0.95rem;
+}
+
+.video-visual {
+    border: 1px solid var(--card-border);
+    border-radius: 14px;
+    background: linear-gradient(180deg, rgba(11, 28, 19, 0.9), rgba(8, 14, 11, 0.95));
+    padding: 1rem;
+    display: grid;
+}
+
+.video-canvas {
+    width: 100%;
+    border-radius: 12px;
+    border: 1px solid rgba(89, 136, 111, 0.4);
+    background: rgba(5, 13, 10, 0.88);
+    padding: 0.9rem;
+    display: grid;
+    align-content: space-between;
+    gap: 1rem;
+}
+
+.video-track {
+    display: grid;
+    gap: 0.45rem;
+}
+
+.chunk-item {
+    border: 1px solid rgba(92, 155, 124, 0.45);
+    background: linear-gradient(90deg, rgba(30, 97, 67, 0.25), rgba(16, 36, 27, 0.85));
+    color: #b8e8d1;
+    border-radius: 10px;
+    padding: 0.48rem 0.62rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+    transform: translateX(0);
+    transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.chunk-item.active {
+    border-color: rgba(0, 255, 136, 0.9);
+    transform: translateX(6px);
+}
+
+.chunk-item::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg, transparent, rgba(0, 255, 136, 0.3), transparent);
+    transform: translateX(-120%);
+}
+
+.chunk-item.active::after {
+    animation: chunk-scan 0.8s ease forwards;
+}
+
+.chunk-item span {
+    font-family: var(--font-mono);
+    font-size: 0.76rem;
+}
+
+.chunk-item em {
+    font-style: normal;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: #7efdc8;
+}
+
+.video-shield {
+    border: 1px solid rgba(0, 255, 136, 0.45);
+    background: rgba(0, 255, 136, 0.08);
+    color: #9effd3;
+    border-radius: 10px;
+    text-align: center;
+    padding: 0.55rem;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    letter-spacing: 0.4px;
+}
+
 .tech-specs {
     background: linear-gradient(180deg, rgba(6, 12, 9, 0.3), rgba(6, 15, 11, 0.9));
 }
@@ -893,6 +1068,11 @@ section {
     100% { transform: translateY(220px); opacity: 0; }
 }
 
+@keyframes chunk-scan {
+    0% { transform: translateX(-120%); }
+    100% { transform: translateX(120%); }
+}
+
 @keyframes pulse-pill {
     0% { box-shadow: 0 0 0 rgba(0, 255, 136, 0); }
     50% { box-shadow: 0 0 12px rgba(0, 255, 136, 0.25); }
@@ -931,6 +1111,8 @@ section {
 
 @media (max-width: 900px) {
     .feature-grid,
+    .deep-grid,
+    .video-layout,
     .tech-grid,
     .privacy-grid,
     .stats-grid,

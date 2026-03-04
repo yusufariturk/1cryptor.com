@@ -4,17 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>1Cryptor - Your files. Encrypted. Only you have the key.</title>
-    <meta name="description" content="Secure file encryption with AES-256-GCM, Argon2id, and RSA-4096. Zero knowledge architecture.">
+    <meta name="description" content="1Cryptor protects your files with AES-256-GCM, Argon2id, RSA-4096, and zero-knowledge architecture.">
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 </head>
 <body>
+    <div class="cursor-glow"></div>
+    <div class="page-noise"></div>
     <header class="header">
         <div class="container">
-            <a href="#" class="logo">
+            <a href="#home" class="logo">
                 <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <circle cx="20" cy="20" r="18" stroke="#00FF88" stroke-width="2"/>
                     <path d="M20 10V16M20 24V30M14 20H10M30 20H26" stroke="#00FF88" stroke-width="2" stroke-linecap="round"/>
@@ -23,28 +25,40 @@
                 <span>1Cryptor</span>
             </a>
             <nav class="nav">
-                <a href="#how-it-works">How it works</a>
+                <a href="#home">Home</a>
+                <a href="#how-it-works">How It Works</a>
                 <a href="#technology">Technology</a>
+                <a href="#about">About</a>
                 <a href="#privacy">Privacy</a>
-                <a href="mailto:contact@1cryptor.com">Contact</a>
+                <a href="terms.html">Terms</a>
+                <a href="#download">Download</a>
             </nav>
-            <a href="https://apps.apple.com/app/idYOUR_APP_ID" class="btn btn-primary">Download App</a>
+            <a href="https://apps.apple.com/app/idYOUR_APP_ID" class="btn btn-primary magnetic">Get 1Cryptor</a>
         </div>
     </header>
-
-    <main>
+    <main id="home">
         <section class="hero">
+            <div class="hero-bg-grid"></div>
+            <div class="hero-orb hero-orb-one"></div>
+            <div class="hero-orb hero-orb-two"></div>
             <div class="container hero-content">
-                <div class="hero-text">
+                <div class="hero-text" data-aos="fade-up">
+                    <div class="eyebrow">ZERO-KNOWLEDGE FILE SECURITY</div>
                     <h1 class="glitch" data-text="Your files. Encrypted. Only you have the key.">Your files. Encrypted.<br>Only you have the key.</h1>
-                    <p class="hero-subtitle">Military-grade encryption for your personal cloud. Zero knowledge, zero compromise.</p>
+                    <p class="hero-subtitle">1Cryptor turns every file into unreadable ciphertext before upload using a Rust encryption engine. Not your key, not your data.</p>
+                    <div class="hero-tags">
+                        <span class="pill">AES-256-GCM</span>
+                        <span class="pill">Argon2id</span>
+                        <span class="pill">RSA-4096</span>
+                        <span class="pill">5 MB Chunking</span>
+                    </div>
                     <div class="hero-actions">
-                        <a href="https://apps.apple.com/app/idYOUR_APP_ID" class="btn btn-primary">Download on the App Store</a>
-                        <a href="#how-it-works" class="btn btn-secondary">Learn how it works</a>
+                        <a href="https://apps.apple.com/app/idYOUR_APP_ID" class="btn btn-primary btn-large magnetic">Download on the App Store</a>
+                        <a href="#how-it-works" class="btn btn-secondary magnetic">Learn how it works</a>
                     </div>
                 </div>
-                <div class="hero-visual">
-                    <div class="encryption-visualizer">
+                <div class="hero-visual" data-aos="fade-left">
+                    <div class="encryption-visualizer" id="tilt-shell">
                         <div class="lock-icon">
                             <svg width="120" height="160" viewBox="0 0 120 160" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M60 10C32.3858 10 10 32.3858 10 60V80H110V60C110 32.3858 87.6142 10 60 10Z" stroke="#00FF88" stroke-width="4"/>
@@ -52,50 +66,111 @@
                                 <circle cx="60" cy="115" r="10" fill="#00FF88"/>
                             </svg>
                         </div>
-                        <div class="code-stream">
-                            <span>01010101</span>
-                            <span>ENCRYPTED</span>
-                            <span>AES-256</span>
-                            <span>LOCKED</span>
-                        </div>
+                        <div class="ring ring-one"></div>
+                        <div class="ring ring-two"></div>
+                        <div class="ring ring-three"></div>
+                        <div class="code-stream"></div>
+                    </div>
+                    <div class="status-card">
+                        <div class="status-line"><span>Vault Status</span><strong>Protected</strong></div>
+                        <div class="status-line"><span>Encryption</span><strong>Active</strong></div>
+                        <div class="status-line"><span>Backdoor</span><strong>None</strong></div>
                     </div>
                 </div>
             </div>
         </section>
-
+        <section class="stats" data-aos="fade-up">
+            <div class="container stats-grid">
+                <article class="stat-card">
+                    <h3 class="counter" data-target="256">0</h3>
+                    <p>Bit key strength for AES data encryption.</p>
+                </article>
+                <article class="stat-card">
+                    <h3 class="counter" data-target="4096">0</h3>
+                    <p>Bit RSA key wrapping for master key protection.</p>
+                </article>
+                <article class="stat-card">
+                    <h3 class="counter" data-target="128">0</h3>
+                    <p>MB Argon2id memory-hard defense against brute force.</p>
+                </article>
+                <article class="stat-card">
+                    <h3><span class="counter" data-target="5">0</span> MB</h3>
+                    <p>Per encrypted chunk with unique nonce and tag.</p>
+                </article>
+            </div>
+        </section>
         <section id="how-it-works" class="features">
             <div class="container">
-                <div class="section-header">
-                    <h2>How It Works</h2>
-                    <p>Your data never leaves your device unencrypted.</p>
+                <div class="section-header" data-aos="fade-up">
+                    <h2>How 1Cryptor Protects You</h2>
+                    <p>Everything critical happens locally on your device before any sync operation.</p>
                 </div>
                 <div class="feature-grid">
-                    <div class="feature-card" data-aos="fade-up">
-                        <div class="icon">🔒</div>
-                        <h3>Device-Only Encryption</h3>
-                        <p>Encryption happens on your device. Your keys never leave your phone.</p>
-                    </div>
-                    <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                    <article class="feature-card" data-aos="fade-up">
+                        <div class="icon">🧩</div>
+                        <h3>Split Into Secure Chunks</h3>
+                        <p>Files are split into 5 MB blocks. Each block is encrypted independently for performance and cryptographic isolation.</p>
+                    </article>
+                    <article class="feature-card" data-aos="fade-up">
+                        <div class="icon">🛡️</div>
+                        <h3>Encrypt On Device</h3>
+                        <p>Content, names, and metadata are encrypted locally with AES-256-GCM and authenticated with a 16-byte tag.</p>
+                    </article>
+                    <article class="feature-card" data-aos="fade-up">
+                        <div class="icon">🔑</div>
+                        <h3>Only Your Password Unlocks</h3>
+                        <p>Your password derives keys using Argon2id and unlocks the private key needed to unwrap the master key.</p>
+                    </article>
+                    <article class="feature-card" data-aos="fade-up">
                         <div class="icon">☁️</div>
-                        <h3>Your Cloud</h3>
-                        <p>Files are stored in your own iCloud or Google Drive, but fully encrypted by 1Cryptor.</p>
-                    </div>
-                    <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
-                        <div class="icon">⚡</div>
-                        <h3>Zero Knowledge</h3>
-                        <p>We don't know your password, we don't have your keys, and we can't see your files.</p>
-                    </div>
+                        <h3>Bring Your Own Cloud</h3>
+                        <p>Store encrypted data in your iCloud Drive or Google Drive. The cloud sees encrypted blobs, never plaintext.</p>
+                    </article>
                 </div>
             </div>
         </section>
-
+        <section class="pipeline">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <h2>Encryption Flow</h2>
+                    <p>A complete cryptographic pipeline from password entry to secure cloud storage.</p>
+                </div>
+                <div class="pipeline-track">
+                    <div class="pipeline-progress"></div>
+                    <article class="pipeline-step" data-aos="fade-right">
+                        <span>01</span>
+                        <h3>Password Input</h3>
+                        <p>Argon2id v1.3 derives a hardened key with 128 MB memory, 4 iterations, 4 lanes.</p>
+                    </article>
+                    <article class="pipeline-step" data-aos="fade-left">
+                        <span>02</span>
+                        <h3>Private Key Access</h3>
+                        <p>The derived key unlocks your RSA-4096 private key secured by OAEP-SHA256 logic.</p>
+                    </article>
+                    <article class="pipeline-step" data-aos="fade-right">
+                        <span>03</span>
+                        <h3>Master Key Unwrap</h3>
+                        <p>A random 256-bit master key is recovered and used only in-memory for encryption operations.</p>
+                    </article>
+                    <article class="pipeline-step" data-aos="fade-left">
+                        <span>04</span>
+                        <h3>Chunk Encryption</h3>
+                        <p>Each 5 MB chunk receives a fresh 12-byte nonce and is encrypted with AES-256-GCM.</p>
+                    </article>
+                    <article class="pipeline-step" data-aos="fade-right">
+                        <span>05</span>
+                        <h3>Encrypted Sync</h3>
+                        <p>Only encrypted chunks, encrypted names, and encrypted metadata are synced to cloud storage.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
         <section id="technology" class="tech-specs">
             <div class="container">
-                <div class="section-header">
+                <div class="section-header" data-aos="fade-up">
                     <h2>Technology Stack</h2>
-                    <p>Built with Rust for performance and safety.</p>
+                    <p>Rust cryptography engine with Swift integration through C ABI.</p>
                 </div>
-                
                 <div class="tech-grid">
                     <div class="tech-card" data-aos="fade-right">
                         <div class="card-header">
@@ -106,16 +181,14 @@
                         <h3>AES-256-GCM</h3>
                         <div class="code-block">
                             <p><span class="keyword">let</span> cipher = <span class="type">Aes256Gcm</span>::new(key);</p>
-                            <p><span class="comment">// 12-byte unique nonce per chunk</span></p>
+                            <p><span class="comment">nonce: 12 bytes / tag: 16 bytes</span></p>
                             <ul class="tech-details">
-                                <li><span class="property">Algorithm:</span> "AES-256-GCM"</li>
-                                <li><span class="property">Key Size:</span> 256 bits</li>
-                                <li><span class="property">Tag Size:</span> 16 bytes</li>
-                                <li><span class="property">Target:</span> File Content & Names</li>
+                                <li><span class="property">Mode:</span> Authenticated Encryption</li>
+                                <li><span class="property">Key Size:</span> 32 bytes</li>
+                                <li><span class="property">Applied To:</span> Content + Names + Metadata</li>
                             </ul>
                         </div>
                     </div>
-
                     <div class="tech-card" data-aos="fade-left">
                         <div class="card-header">
                             <span class="dot red"></span>
@@ -124,120 +197,141 @@
                         </div>
                         <h3>Argon2id</h3>
                         <div class="code-block">
-                            <p><span class="keyword">let</span> params = <span class="type">Argon2</span>::default();</p>
+                            <p><span class="keyword">let</span> params = <span class="type">Argon2id</span>(128MB, 4, 4);</p>
                             <ul class="tech-details">
-                                <li><span class="property">Memory:</span> 128 MB</li>
-                                <li><span class="property">Iterations:</span> 4</li>
-                                <li><span class="property">Parallelism:</span> 4</li>
-                                <li><span class="property">Output:</span> 32 bytes (Key)</li>
+                                <li><span class="property">Version:</span> 1.3 (0x13)</li>
+                                <li><span class="property">Memory:</span> 131072 KiB</li>
+                                <li><span class="property">Purpose:</span> Password-Based Key Derivation</li>
                             </ul>
                         </div>
                     </div>
-
                     <div class="tech-card" data-aos="fade-right">
                         <div class="card-header">
                             <span class="dot red"></span>
                             <span class="dot yellow"></span>
                             <span class="dot green"></span>
                         </div>
-                        <h3>RSA-4096</h3>
+                        <h3>RSA-4096 + OAEP</h3>
                         <div class="code-block">
                             <p><span class="keyword">use</span> rsa::{Oaep, Sha256};</p>
                             <ul class="tech-details">
                                 <li><span class="property">Key Size:</span> 4096 bits</li>
+                                <li><span class="property">Operation:</span> Master Key Wrapping</li>
                                 <li><span class="property">Padding:</span> OAEP-SHA256</li>
-                                <li><span class="property">Usage:</span> Master Key Wrapping</li>
-                                <li><span class="property">Security:</span> ~140 bits equivalent</li>
                             </ul>
                         </div>
                     </div>
-
                     <div class="tech-card" data-aos="fade-left">
                         <div class="card-header">
                             <span class="dot red"></span>
                             <span class="dot yellow"></span>
                             <span class="dot green"></span>
                         </div>
-                        <h3>Smart Chunking</h3>
+                        <h3>Chunking Engine</h3>
                         <div class="code-block">
-                            <p><span class="keyword">const</span> CHUNK_SIZE: <span class="type">usize</span> = 5 * 1024 * 1024;</p>
+                            <p><span class="keyword">const</span> CHUNK_SIZE = 5 * 1024 * 1024;</p>
                             <ul class="tech-details">
-                                <li><span class="property">Size:</span> 5 MB</li>
-                                <li><span class="property">Nonce:</span> Unique per chunk</li>
-                                <li><span class="property">Benefit:</span> Random Access</li>
-                                <li><span class="property">Integrity:</span> Per-chunk authentication</li>
+                                <li><span class="property">Chunk Size:</span> 5 MB</li>
+                                <li><span class="property">Nonce Rule:</span> Unique Per Chunk</li>
+                                <li><span class="property">Result:</span> Fast + Safer Large File Sync</li>
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-
+        <section id="about" class="why">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <h2>Why 1Cryptor</h2>
+                    <p>Designed for people who want maximum privacy without giving up convenience.</p>
+                </div>
+                <div class="why-grid">
+                    <article class="why-card" data-aos="fade-up">
+                        <h3>Zero Knowledge</h3>
+                        <p>Your password and keys stay on your device. We cannot decrypt your files.</p>
+                    </article>
+                    <article class="why-card" data-aos="fade-up">
+                        <h3>Own Your Storage</h3>
+                        <p>Use your own cloud provider, keep your own control, avoid vendor lock-in.</p>
+                    </article>
+                    <article class="why-card" data-aos="fade-up">
+                        <h3>Free Starter Vault</h3>
+                        <p>Start with one free vault and secure your most important files immediately.</p>
+                    </article>
+                    <article class="why-card" data-aos="fade-up">
+                        <h3>Multi-Device Ready</h3>
+                        <p>Access encrypted files on your devices while preserving end-to-end protection.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
         <section id="privacy" class="privacy-summary">
             <div class="container">
                 <div class="privacy-content">
-                    <h2>Privacy First. Always.</h2>
-                    <p>We believe privacy is a fundamental human right. Here is what we collect and what we don't.</p>
-                    
+                    <h2 data-aos="fade-up">Privacy by Architecture, Not by Promise</h2>
+                    <p data-aos="fade-up">Minimal data principles are built into product logic, not marketing slides.</p>
                     <div class="privacy-grid">
-                        <div class="privacy-column bad">
-                            <h3>What We DON'T Collect</h3>
+                        <div class="privacy-column bad" data-aos="fade-right">
+                            <h3>We Never Collect</h3>
                             <ul>
-                                <li>❌ Your Password</li>
-                                <li>❌ Your Encryption Keys</li>
-                                <li>❌ Your File Content</li>
-                                <li>❌ Your Filenames</li>
+                                <li>✖ Passwords</li>
+                                <li>✖ Encryption keys</li>
+                                <li>✖ File content</li>
+                                <li>✖ Plain filenames or metadata</li>
                             </ul>
                         </div>
-                        <div class="privacy-column good">
-                            <h3>What We DO Collect</h3>
+                        <div class="privacy-column good" data-aos="fade-left">
+                            <h3>Limited Data We May Process</h3>
                             <ul>
-                                <li>✅ Anonymized Crash Reports</li>
-                                <li>✅ App Store Purchase Status</li>
-                                <li>✅ Basic Diagnostic Data</li>
+                                <li>✔ Apple/Google account data for cloud APIs</li>
+                                <li>✔ Subscription and purchase state</li>
+                                <li>✔ Anonymous crash and diagnostic signals</li>
                             </ul>
                         </div>
                     </div>
-                    <div class="privacy-links">
-                        <a href="privacy.html" class="link">Full Privacy Policy &rarr;</a>
-                        <a href="terms.html" class="link">Terms of Service &rarr;</a>
+                    <div class="privacy-links" data-aos="fade-up">
+                        <a href="privacy.html" class="link">Read Privacy Policy</a>
+                        <a href="terms.html" class="link">Read Terms of Service</a>
                     </div>
                 </div>
             </div>
         </section>
-
-        <section class="cta-section">
-            <div class="container">
-                <h2>Secure your digital life today.</h2>
-                <p>Get 1Cryptor for free and start encrypting.</p>
-                <a href="https://apps.apple.com/app/idYOUR_APP_ID" class="btn btn-primary btn-large">Download on the App Store</a>
+        <section id="download" class="cta-section">
+            <div class="container" data-aos="zoom-in">
+                <h2>Encrypt first. Sync second. Breathe easy.</h2>
+                <p>Join people who refuse to hand over private files in plaintext.</p>
+                <a href="https://apps.apple.com/app/idYOUR_APP_ID" class="btn btn-primary btn-large magnetic">Download on the App Store</a>
             </div>
         </section>
     </main>
-
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
                     <h3>1Cryptor</h3>
-                    <p>Your files. Encrypted.</p>
+                    <p>Security-first encrypted file vault with zero-knowledge architecture.</p>
                 </div>
                 <div class="footer-links">
-                    <h4>Legal</h4>
-                    <a href="privacy.html">Privacy Policy</a>
-                    <a href="terms.html">Terms of Service</a>
+                    <h4>Menu</h4>
+                    <a href="#home">Home</a>
+                    <a href="#how-it-works">How It Works</a>
+                    <a href="#technology">Technology</a>
+                    <a href="#about">About</a>
+                    <a href="#download">Download</a>
                 </div>
                 <div class="footer-contact">
-                    <h4>Contact</h4>
+                    <h4>Legal & Contact</h4>
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
                     <a href="mailto:contact@1cryptor.com">contact@1cryptor.com</a>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 1Cryptor. All rights reserved.</p>
+                <p>&copy; 2026 1Cryptor. All rights reserved.</p>
             </div>
         </div>
     </footer>
-
     <script src="js/main.js"></script>
 </body>
 </html>

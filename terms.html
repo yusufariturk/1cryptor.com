@@ -5,9 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terms of Service - 1Cryptor</title>
     <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="cursor-glow"></div>
+    <div class="page-noise"></div>
     <header class="header">
         <div class="container">
             <a href="index.html" class="logo">
@@ -15,60 +19,60 @@
             </a>
             <nav class="nav">
                 <a href="index.html">Home</a>
+                <a href="index.html#technology">Technology</a>
+                <a href="privacy.html">Privacy</a>
                 <a href="mailto:contact@1cryptor.com">Contact</a>
             </nav>
         </div>
     </header>
-
-    <main class="container" style="padding-top: 120px; padding-bottom: 80px;">
-        <h1 style="font-size: 3rem; margin-bottom: 2rem; color: var(--primary-color);">Terms of Service</h1>
-        <p style="margin-bottom: 2rem; color: #aaa;">Last Updated: March 2026</p>
-
-        <section style="margin-bottom: 4rem;">
-            <h2>1. Acceptance of Terms</h2>
-            <p>By downloading or using 1Cryptor, you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use the application.</p>
+    <main class="legal-page">
+        <section class="legal-hero">
+            <div class="container" data-aos="fade-up">
+                <p class="eyebrow">LEGAL</p>
+                <h1>Terms of Service</h1>
+                <p>Last updated: March 2026</p>
+            </div>
         </section>
-
-        <section style="margin-bottom: 4rem;">
-            <h2>2. User Responsibility for Data</h2>
-            <p><strong>Crucial Warning:</strong> 1Cryptor is a "Zero Knowledge" encryption tool. We do not store your passwords or encryption keys.</p>
-            <ul style="list-style-type: disc; margin-left: 2rem; color: #ccc;">
-                <li><strong>Lost Keys:</strong> If you forget your password or lose your master key, your data will be permanently inaccessible. We cannot recover it for you.</li>
-                <li><strong>Backup:</strong> You are solely responsible for maintaining backups of your recovery keys and passwords.</li>
-            </ul>
+        <section class="legal-body">
+            <div class="container legal-grid">
+                <article class="legal-card" data-aos="fade-up">
+                    <h2>1. Acceptance</h2>
+                    <p>By downloading or using 1Cryptor, you agree to these Terms. If you do not agree, do not use the app or related services.</p>
+                </article>
+                <article class="legal-card" data-aos="fade-up">
+                    <h2>2. Your Responsibility</h2>
+                    <p>1Cryptor cannot recover your password or private key. If your credentials are lost, encrypted files may become permanently unrecoverable.</p>
+                </article>
+                <article class="legal-card" data-aos="fade-up">
+                    <h2>3. License Scope</h2>
+                    <p>We grant a personal, non-exclusive, non-transferable, revocable license to use 1Cryptor according to these Terms and applicable law.</p>
+                </article>
+                <article class="legal-card" data-aos="fade-up">
+                    <h2>4. Security Disclaimer</h2>
+                    <p>1Cryptor uses AES-256-GCM, Argon2id, RSA-4096, and secure random generation. No software can guarantee absolute risk elimination in all environments.</p>
+                </article>
+                <article class="legal-card" data-aos="fade-up">
+                    <h2>5. Limitation of Liability</h2>
+                    <p>To the extent permitted by law, 1Cryptor is not liable for indirect, incidental, or consequential losses including loss of data, revenue, or access.</p>
+                </article>
+                <article class="legal-card" data-aos="fade-up">
+                    <h2>6. International Compliance</h2>
+                    <p>You are responsible for complying with laws in your jurisdiction regarding encryption, cloud storage, and digital content handling.</p>
+                </article>
+                <article class="legal-card" data-aos="fade-up">
+                    <h2>7. Contact</h2>
+                    <p>For legal questions, email <a href="mailto:contact@1cryptor.com">contact@1cryptor.com</a>.</p>
+                </article>
+            </div>
         </section>
-
-        <section style="margin-bottom: 4rem;">
-            <h2>3. License to Use</h2>
-            <p>We grant you a personal, non-exclusive, non-transferable, revocable license to use 1Cryptor for your personal, non-commercial use, subject to these Terms.</p>
-        </section>
-
-        <section style="margin-bottom: 4rem;">
-            <h2>4. Disclaimer of Warranties</h2>
-            <p>1Cryptor is provided "AS IS" and "AS AVAILABLE" without any warranties of any kind, express or implied. While we use industry-standard encryption (AES-256-GCM, Argon2id), we do not guarantee that the software is completely free of bugs or vulnerabilities.</p>
-        </section>
-
-        <section style="margin-bottom: 4rem;">
-            <h2>5. Limitation of Liability</h2>
-            <p>To the maximum extent permitted by law, 1Cryptor and its developers shall not be liable for any indirect, incidental, special, consequential, or punitive damages, or any loss of profits or revenues, whether incurred directly or indirectly, or any loss of data, use, goodwill, or other intangible losses.</p>
-        </section>
-
-        <section style="margin-bottom: 4rem;">
-            <h2>6. Governing Law</h2>
-            <p>These Terms shall be governed by and construed in accordance with the laws of the jurisdiction in which the developer resides, without regard to its conflict of law provisions.</p>
-        </section>
-
-        <section style="margin-bottom: 4rem;">
-            <h2>7. Contact Us</h2>
-            <p>If you have questions about these Terms, please contact us at <a href="mailto:contact@1cryptor.com" style="color: var(--primary-color);">contact@1cryptor.com</a>.</p>
-        </section>
-
     </main>
-
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2024 1Cryptor. All rights reserved.</p>
+            <div class="footer-bottom">
+                <p>&copy; 2026 1Cryptor. All rights reserved.</p>
+            </div>
         </div>
     </footer>
+    <script src="js/main.js"></script>
 </body>
 </html>

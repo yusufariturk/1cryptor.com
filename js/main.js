@@ -1,54 +1,109 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Intersection Observer for Scroll Animations
-    const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.1
-    };
-
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('aos-animate');
-                observer.unobserve(entry.target); // Only animate once
-            }
-        });
-    }, observerOptions);
-
     const animatedElements = document.querySelectorAll('[data-aos]');
-    animatedElements.forEach(el => observer.observe(el));
+    const observer = new IntersectionObserver(
+        (entries, io) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('aos-animate');
+                    io.unobserve(entry.target);
+                }
+            });
+        },
+        { threshold: 0.16 }
+    );
+    animatedElements.forEach((el) => observer.observe(el));
 
-    // Dynamic Code Rain Effect for Hero
-    const codeStreamContainer = document.querySelector('.code-stream');
-    
-    function createCodeDrop() {
-        const span = document.createElement('span');
-        span.textContent = Math.random() > 0.5 ? '1' : '0';
-        span.style.left = Math.random() * 100 + '%';
-        span.style.animationDuration = (Math.random() * 2 + 1) + 's';
-        span.style.opacity = Math.random();
-        span.style.fontSize = (Math.random() * 0.5 + 0.5) + 'rem';
-        
-        codeStreamContainer.appendChild(span);
-
-        setTimeout(() => {
-            span.remove();
-        }, 3000);
+    const stream = document.querySelector('.code-stream');
+    const words = ['AES-256', 'GCM', 'ARGON2ID', 'RSA-4096', 'NONCE', 'TAG', 'CHUNK', 'LOCKED', 'E2E'];
+    if (stream) {
+        setInterval(() => {
+            const drop = document.createElement('span');
+            drop.className = 'code-drop';
+            drop.textContent = words[Math.floor(Math.random() * words.length)];
+            drop.style.left = `${Math.random() * 92 + 4}%`;
+            drop.style.animationDuration = `${Math.random() * 1.7 + 1.6}s`;
+            drop.style.fontSize = `${Math.random() * 0.35 + 0.62}rem`;
+            stream.appendChild(drop);
+            setTimeout(() => {
+                drop.remove();
+            }, 2600);
+        }, 95);
     }
 
-    // Create drops periodically
-    setInterval(createCodeDrop, 100);
+    const counters = document.querySelectorAll('.counter');
+    const counterObserver = new IntersectionObserver(
+        (entries, io) => {
+            entries.forEach((entry) => {
+                if (!entry.isIntersecting) {
+                    return;
+                }
+                const node = entry.target;
+                const target = Number(node.getAttribute('data-target')) || 0;
+                const duration = 1500;
+                const start = performance.now();
+                const tick = (time) => {
+                    const ratio = Math.min((time - start) / duration, 1);
+                    const eased = 1 - Math.pow(1 - ratio, 3);
+                    node.textContent = Math.floor(target * eased).toLocaleString();
+                    if (ratio < 1) {
+                        requestAnimationFrame(tick);
+                    }
+                };
+                requestAnimationFrame(tick);
+                io.unobserve(node);
+            });
+        },
+        { threshold: 0.65 }
+    );
+    counters.forEach((counter) => counterObserver.observe(counter));
 
-    // Glitch Text Randomizer (Optional extra flair)
-    const glitchText = document.querySelector('.glitch');
-    if (glitchText) {
-        setInterval(() => {
-            const original = glitchText.getAttribute('data-text');
-            // Occasionally scramble text
-            if (Math.random() > 0.95) {
-                glitchText.classList.add('scramble');
-                setTimeout(() => glitchText.classList.remove('scramble'), 200);
+    const tilt = document.getElementById('tilt-shell');
+    if (tilt) {
+        tilt.addEventListener('mousemove', (event) => {
+            const rect = tilt.getBoundingClientRect();
+            const x = (event.clientX - rect.left) / rect.width - 0.5;
+            const y = (event.clientY - rect.top) / rect.height - 0.5;
+            tilt.style.transform = `rotateX(${(-y * 14).toFixed(2)}deg) rotateY(${(x * 14).toFixed(2)}deg)`;
+        });
+        tilt.addEventListener('mouseleave', () => {
+            tilt.style.transform = 'rotateX(0deg) rotateY(0deg)';
+        });
+    }
+
+    const glow = document.querySelector('.cursor-glow');
+    if (glow) {
+        window.addEventListener('pointermove', (event) => {
+            glow.style.transform = `translate(${event.clientX}px, ${event.clientY}px)`;
+        });
+    }
+
+    const magneticButtons = document.querySelectorAll('.magnetic');
+    magneticButtons.forEach((button) => {
+        button.addEventListener('mousemove', (event) => {
+            const rect = button.getBoundingClientRect();
+            const x = event.clientX - rect.left - rect.width / 2;
+            const y = event.clientY - rect.top - rect.height / 2;
+            button.style.transform = `translate(${x * 0.12}px, ${y * 0.12}px)`;
+        });
+        button.addEventListener('mouseleave', () => {
+            button.style.transform = 'translate(0, 0)';
+        });
+    });
+
+    const progress = document.querySelector('.pipeline-progress');
+    if (progress) {
+        const updateProgress = () => {
+            const track = progress.parentElement;
+            if (!track) {
+                return;
             }
-        }, 2000);
+            const rect = track.getBoundingClientRect();
+            const vh = window.innerHeight;
+            const visible = Math.min(Math.max((vh - rect.top) / (rect.height + vh * 0.4), 0), 1);
+            progress.style.transform = `scaleY(${visible.toFixed(3)})`;
+        };
+        updateProgress();
+        window.addEventListener('scroll', updateProgress, { passive: true });
+        window.addEventListener('resize', updateProgress);
     }
 });

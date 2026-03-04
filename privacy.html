@@ -5,9 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy - 1Cryptor</title>
     <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="cursor-glow"></div>
+    <div class="page-noise"></div>
     <header class="header">
         <div class="container">
             <a href="index.html" class="logo">
@@ -15,55 +19,65 @@
             </a>
             <nav class="nav">
                 <a href="index.html">Home</a>
+                <a href="index.html#technology">Technology</a>
+                <a href="terms.html">Terms</a>
                 <a href="mailto:contact@1cryptor.com">Contact</a>
             </nav>
         </div>
     </header>
-
-    <main class="container" style="padding-top: 120px; padding-bottom: 80px;">
-        <h1 style="font-size: 3rem; margin-bottom: 2rem; color: var(--primary-color);">Privacy Policy</h1>
-        <p style="margin-bottom: 2rem; color: #aaa;">Last Updated: March 2026</p>
-
-        <section style="margin-bottom: 4rem;">
-            <h2>1. Zero Knowledge Architecture</h2>
-            <p>1Cryptor is built on a "Zero Knowledge" principle. This means we know nothing about the data you store. We cannot see your files, we cannot recover your passwords, and we cannot access your encryption keys.</p>
+    <main class="legal-page">
+        <section class="legal-hero">
+            <div class="container" data-aos="fade-up">
+                <p class="eyebrow">LEGAL</p>
+                <h1>Privacy Policy</h1>
+                <p>Last updated: March 2026</p>
+            </div>
         </section>
-
-        <section style="margin-bottom: 4rem;">
-            <h2>2. Data We DO NOT Collect</h2>
-            <ul style="list-style-type: disc; margin-left: 2rem; color: #ccc;">
-                <li><strong>Your Password:</strong> It never leaves your device.</li>
-                <li><strong>Your Master Key:</strong> It is encrypted on your device and never sent to us.</li>
-                <li><strong>Your Files:</strong> File content is encrypted before it ever touches any cloud storage.</li>
-                <li><strong>File Metadata:</strong> Filenames and thumbnails are also encrypted.</li>
-            </ul>
+        <section class="legal-body">
+            <div class="container legal-grid">
+                <article class="legal-card" data-aos="fade-up">
+                    <h2>1. Zero-Knowledge Model</h2>
+                    <p>1Cryptor is built so we cannot read your files. Your password and key material stay on your device, and encrypted data remains unreadable to us.</p>
+                </article>
+                <article class="legal-card" data-aos="fade-up">
+                    <h2>2. Data We Do Not Collect</h2>
+                    <ul>
+                        <li>Your plaintext password</li>
+                        <li>Your private encryption keys</li>
+                        <li>Your unencrypted file content</li>
+                        <li>Your unencrypted filenames and metadata</li>
+                    </ul>
+                </article>
+                <article class="legal-card" data-aos="fade-up">
+                    <h2>3. Data We May Process</h2>
+                    <ul>
+                        <li>Apple or Google account metadata required for cloud integration</li>
+                        <li>Subscription and purchase status from app marketplaces</li>
+                        <li>Anonymized crash and diagnostic information</li>
+                    </ul>
+                </article>
+                <article class="legal-card" data-aos="fade-up">
+                    <h2>4. Data Storage Locations</h2>
+                    <p>Encrypted files are stored on your device and in cloud providers you connect, such as iCloud Drive or Google Drive. We do not host a centralized plaintext file service.</p>
+                </article>
+                <article class="legal-card" data-aos="fade-up">
+                    <h2>5. International Use</h2>
+                    <p>You may use 1Cryptor globally. You are responsible for compliance with local laws related to encryption and cloud storage in your jurisdiction.</p>
+                </article>
+                <article class="legal-card" data-aos="fade-up">
+                    <h2>6. Contact</h2>
+                    <p>For privacy questions, email <a href="mailto:contact@1cryptor.com">contact@1cryptor.com</a>.</p>
+                </article>
+            </div>
         </section>
-
-        <section style="margin-bottom: 4rem;">
-            <h2>3. Data We May Collect</h2>
-            <p>To operate the service and improve stability, we may collect minimal, anonymized data:</p>
-            <ul style="list-style-type: disc; margin-left: 2rem; color: #ccc;">
-                <li><strong>App Store Information:</strong> Account status for subscription verification (handled by Apple/Google).</li>
-                <li><strong>Diagnostic Data:</strong> Anonymous crash reports and performance metrics to help us fix bugs.</li>
-            </ul>
-        </section>
-
-        <section style="margin-bottom: 4rem;">
-            <h2>4. Where Your Data Lives</h2>
-            <p>Your encrypted data is stored in your own personal cloud storage accounts (such as iCloud Drive or Google Drive) or locally on your device. We do not operate a central server that holds your files.</p>
-        </section>
-
-        <section style="margin-bottom: 4rem;">
-            <h2>5. Contact Us</h2>
-            <p>If you have questions about this policy, please contact us at <a href="mailto:contact@1cryptor.com" style="color: var(--primary-color);">contact@1cryptor.com</a>.</p>
-        </section>
-
     </main>
-
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2024 1Cryptor. All rights reserved.</p>
+            <div class="footer-bottom">
+                <p>&copy; 2026 1Cryptor. All rights reserved.</p>
+            </div>
         </div>
     </footer>
+    <script src="js/main.js"></script>
 </body>
 </html>

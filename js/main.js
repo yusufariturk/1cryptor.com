@@ -118,7 +118,7 @@ const scrambleObs = new IntersectionObserver(
       const el = e.target;
       const text = el.getAttribute('data-text') || el.textContent;
       el.textContent = text;
-      setTimeout(() => scramble(el, text, 2400), 300);
+      setTimeout(() => scramble(el, text, 4500), 400);
       io.unobserve(el);
     }
   }),

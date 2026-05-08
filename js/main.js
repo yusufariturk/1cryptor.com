@@ -93,10 +93,9 @@ reveals.forEach(el => revealObs.observe(el));
 const CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*';
 
 function scramble(el, finalText, duration = 900) {
-  let frame = 0;
-  const total = Math.ceil(duration / 50);
-  const run = () => {
-    const progress = frame / total;
+  const start = performance.now();
+  const run = (now) => {
+    const progress = Math.min((now - start) / duration, 1);
     const revealed = Math.floor(progress * finalText.length);
     let out = '';
     for (let i = 0; i < finalText.length; i++) {
@@ -105,10 +104,10 @@ function scramble(el, finalText, duration = 900) {
       else out += CHARS[Math.floor(Math.random() * CHARS.length)];
     }
     el.textContent = out;
-    if (frame++ < total) requestAnimationFrame(run);
+    if (progress < 1) requestAnimationFrame(run);
     else el.textContent = finalText;
   };
-  run();
+  requestAnimationFrame(run);
 }
 
 const scrambleEls = document.querySelectorAll('.scramble');

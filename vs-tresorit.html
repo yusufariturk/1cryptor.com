@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1Cryptor vs Tresorit — Honest Comparison</title>
+    <meta name="description" content="1Cryptor vs Tresorit: Modern cryptography meets enterprise security. The real differences explained.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Space+Grotesk:wght@500;600&amp;display=swap');
+        
+        body {
+            font-family: 'Inter', system_ui, sans-serif;
+        }
+        
+        .font-display {
+            font-family: 'Space Grotesk', system_ui, sans-serif;
+            font-weight: 600;
+        }
+
+        .section-fade {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        
+        .section-fade.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .comparison-row {
+            transition: all 0.3s ease;
+        }
+        
+        .comparison-row:hover {
+            background-color: #f8fafc;
+        }
+
+        .winner {
+            background: linear-gradient(135deg, #059669, #10B981);
+            color: white;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body class="bg-white text-slate-800">
+    <!-- Navbar -->
+    <nav class="bg-white border-b border-emerald-100 sticky top-0 z-50">
+        <div class="max-w-screen-xl mx-auto px-6">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center gap-x-4">
+                    <div class="flex items-center gap-x-3">
+                        <div class="w-10 h-10 bg-gradient-to-br from-emerald-600 to-emerald-500 rounded-2xl flex items-center justify-center">
+                            <span class="text-white text-3xl font-black">1C</span>
+                        </div>
+                        <span class="font-display text-3xl font-semibold tracking-tight text-emerald-700">1Cryptor</span>
+                    </div>
+                </div>
+                
+                <div class="flex items-center gap-x-4">
+                    <a href="index.html" class="text-sm font-medium hover:text-emerald-700 transition-colors">← Back to Home</a>
+                    <a href="https://apps.apple.com/app/1cryptor/id6759910415" class="px-6 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-3xl text-sm flex items-center gap-x-2">
+                        <i class="fa-brands fa-apple"></i>
+                        <span>Download</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <div class="max-w-screen-xl mx-auto px-6 pt-20 pb-16 text-center">
+        <div class="max-w-4xl mx-auto">
+            <div class="inline-flex items-center gap-x-2 bg-emerald-50 border border-emerald-200 text-emerald-700 px-5 py-1.5 rounded-full text-sm font-medium mb-8">
+                <span>Enterprise vs Consumer — The Real Difference</span>
+            </div>
+            
+            <h1 class="text-7xl font-display font-semibold tracking-tighter leading-none mb-8">
+                1Cryptor <span class="text-emerald-600">vs</span> Tresorit
+            </h1>
+            
+            <p class="text-2xl text-slate-600 max-w-2xl mx-auto">
+                Tresorit is excellent for enterprises.<br>
+                1Cryptor is built for individuals who want the most modern security.
+            </p>
+        </div>
+    </div>
+
+    <!-- Quick Verdict -->
+    <div class="max-w-screen-xl mx-auto px-6 pb-16">
+        <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-6">
+            <div class="bg-white border border-emerald-200 rounded-3xl p-8 text-center">
+                <div class="text-emerald-600 text-sm font-semibold mb-2">BEST FOR</div>
+                <div class="text-3xl font-semibold mb-3">1Cryptor</div>
+                <div class="text-emerald-600">Privacy-focused individuals &amp; power users</div>
+            </div>
+            <div class="bg-white border border-slate-200 rounded-3xl p-8 text-center">
+                <div class="text-slate-600 text-sm font-semibold mb-2">BEST FOR</div>
+                <div class="text-3xl font-semibold mb-3">Tresorit</div>
+                <div class="text-slate-600">Large enterprises &amp; compliance teams</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Detailed Comparison -->
+    <div class="max-w-screen-xl mx-auto px-6 pb-20">
+        <div class="text-center mb-12">
+            <h2 class="text-5xl font-display font-semibold tracking-tight">Technical Comparison</h2>
+        </div>
+
+        <div class="max-w-5xl mx-auto bg-white border border-emerald-200 rounded-3xl overflow-hidden shadow-xl">
+            <table class="w-full text-sm">
+                <thead class="bg-emerald-50">
+                    <tr>
+                        <th class="px-8 py-6 text-left font-semibold text-emerald-800">Feature</th>
+                        <th class="px-8 py-6 text-center font-bold text-emerald-700">1Cryptor</th>
+                        <th class="px-8 py-6 text-center font-semibold text-slate-700">Tresorit</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-emerald-100">
+                    <tr class="comparison-row">
+                        <td class="px-8 py-5 font-medium">Encryption Algorithm</td>
+                        <td class="px-8 py-5 text-center"><span class="font-semibold text-emerald-600">AES-256-GCM</span> (AEAD)</td>
+                        <td class="px-8 py-5 text-center">AES-256 + RSA</td>
+                    </tr>
+                    <tr class="comparison-row">
+                        <td class="px-8 py-5 font-medium">Key Derivation</td>
+                        <td class="px-8 py-5 text-center"><span class="font-semibold text-emerald-600">Argon2id (128 MB)</span></td>
+                        <td class="px-8 py-5 text-center">Argon2 + PBKDF2</td>
+                    </tr>
+                    <tr class="comparison-row">
+                        <td class="px-8 py-5 font-medium">Crypto Engine</td>
+                        <td class="px-8 py-5 text-center"><span class="font-semibold text-emerald-600">Rust</span> (memory-safe)</td>
+                        <td class="px-8 py-5 text-center">Java / .NET</td>
+                    </tr>
+                    <tr class="comparison-row">
+                        <td class="px-8 py-5 font-medium">iOS Integration</td>
+                        <td class="px-8 py-5 text-center"><span class="font-semibold text-emerald-600">Native FileProvider</span></td>
+                        <td class="px-8 py-5 text-center">WebDAV / App</td>
+                    </tr>
+                    <tr class="comparison-row">
+                        <td class="px-8 py-5 font-medium">Platform Support</td>
+                        <td class="px-8 py-5 text-center">iOS • macOS</td>
+                        <td class="px-8 py-5 text-center"><span class="font-semibold text-emerald-600">Win • Mac • Linux • Web • Mobile</span></td>
+                    </tr>
+                    <tr class="comparison-row">
+                        <td class="px-8 py-5 font-medium">Enterprise Features</td>
+                        <td class="px-8 py-5 text-center">Coming soon</td>
+                        <td class="px-8 py-5 text-center"><span class="font-semibold text-emerald-600">Team management, SSO, Audit logs</span></td>
+                    </tr>
+                    <tr class="comparison-row">
+                        <td class="px-8 py-5 font-medium">Pricing</td>
+                        <td class="px-8 py-5 text-center"><span class="font-semibold text-emerald-600">Paid (Free starter)</span></td>
+                        <td class="px-8 py-5 text-center">Higher (Enterprise focused)</td>
+                    </tr>
+                    <tr class="comparison-row">
+                        <td class="px-8 py-5 font-medium">Open Source</td>
+                        <td class="px-8 py-5 text-center"><span class="font-semibold text-amber-600">Coming soon (2026)</span></td>
+                        <td class="px-8 py-5 text-center">Closed source</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Why Choose 1Cryptor -->
+    <div class="max-w-screen-xl mx-auto px-6 pb-20">
+        <div class="max-w-3xl mx-auto text-center">
+            <h3 class="text-4xl font-display font-semibold tracking-tight mb-8">Why Privacy-Focused Users Choose 1Cryptor</h3>
+            
+            <div class="grid md:grid-cols-2 gap-6 text-left">
+                <div class="bg-emerald-50 border border-emerald-200 rounded-3xl p-8">
+                    <div class="text-emerald-600 text-4xl mb-4"><i class="fa-solid fa-rocket"></i></div>
+                    <div class="font-semibold text-xl mb-3">More Modern Cryptography</div>
+                    <p class="text-emerald-700">AES-GCM + Argon2id 128MB + Rust engine. Tresorit is solid, but 1Cryptor uses the latest standards.</p>
+                </div>
+                <div class="bg-emerald-50 border border-emerald-200 rounded-3xl p-8">
+                    <div class="text-emerald-600 text-4xl mb-4"><i class="fa-solid fa-mobile-alt"></i></div>
+                    <div class="font-semibold text-xl mb-3">Superior iOS Experience</div>
+                    <p class="text-emerald-700">Native FileProvider integration vs Tresorit's WebDAV-based approach. Smoother and more reliable on Apple devices.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="bg-emerald-950 py-20 text-white">
+        <div class="max-w-screen-xl mx-auto px-6 text-center">
+            <h2 class="text-5xl font-display font-semibold tracking-tight mb-6">Ready for the most modern encryption?</h2>
+            <p class="text-xl text-emerald-200 max-w-md mx-auto mb-10">1Cryptor delivers enterprise-grade security with consumer simplicity.</p>
+            
+            <a href="https://apps.apple.com/app/1cryptor/id6759910415" class="inline-flex items-center gap-x-4 px-12 py-5 bg-white text-emerald-800 font-extrabold rounded-3xl text-2xl hover:bg-emerald-100 transition-all shadow-2xl">
+                <span>Download 1Cryptor — Free Starter</span>
+            </a>
+        </div>
+    </div>
+
+    <footer class="bg-slate-950 text-slate-400 py-10 text-center text-sm">
+        © 2026 1Cryptor • Built for those who take privacy seriously
+    </footer>
+
+    <script>
+        function initAnimations() {
+            const sections = document.querySelectorAll('.section-fade');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.2 });
+
+            sections.forEach(section => observer.observe(section));
+        }
+
+        window.onload = function() {
+            initAnimations();
+            console.log('%c[Tresorit Comparison] Loaded', 'color:#10B981');
+        }
+    </script>
+</body>
+</html>

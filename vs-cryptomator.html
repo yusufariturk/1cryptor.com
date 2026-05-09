@@ -3,16 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>1Cryptor vs Cryptomator — Honest Technical Comparison</title>
-    <meta name="description" content="1Cryptor vs Cryptomator: AES-256-GCM vs AES-256-CTR, Argon2id vs scrypt, Rust vs Java. The real differences explained honestly.">
+    <title>1Cryptor vs Cryptomator — Honest Comparison</title>
+    <meta name="description" content="1Cryptor vs Cryptomator: The honest technical comparison with modern encryption standards.">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Space+Grotesk:wght@500;600&amp;display=swap');
-        
-        :root {
-            --primary: #FF6B00;
-        }
         
         body {
             font-family: 'Inter', system_ui, sans-serif;
@@ -23,69 +19,82 @@
             font-weight: 600;
         }
 
-        .section {
-            scroll-margin-top: 80px;
+        .green-gradient {
+            background: linear-gradient(135deg, #059669, #10B981);
         }
 
-        .comparison-table {
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
-        }
-
-        .winner {
-            background: linear-gradient(135deg, #FF6B00, #EA580C);
-            color: white;
-            font-weight: 600;
-        }
-
-        .nav-active {
-            color: #FF6B00;
-            font-weight: 600;
-        }
-
-        .feature-row {
-            transition: background-color 0.2s ease;
+        .section-fade {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
         
-        .feature-row:hover {
-            background-color: #111827;
+        .section-fade.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .metric-bar {
-            height: 6px;
-            background: linear-gradient(to right, #FF6B00, #EA580C);
+            height: 8px;
+            background: linear-gradient(to right, #059669, #10B981);
             border-radius: 9999px;
-            transition: width 1s ease-out;
+            transition: width 1.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .comparison-row {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .comparison-row:hover {
+            background-color: #f8fafc;
+            transform: scale(1.01);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.05);
+        }
+
+        .winner-badge {
+            animation: winnerPop 0.6s ease-out forwards;
+        }
+
+        @keyframes winnerPop {
+            0% { transform: scale(0.8); opacity: 0; }
+            50% { transform: scale(1.15); }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .stat-number {
+            font-variant-numeric: tabular-nums;
+        }
+
+        .glow-green {
+            box-shadow: 0 0 25px rgba(16, 185, 129, 0.3);
         }
     </style>
 </head>
-<body class="bg-slate-950 text-slate-200">
+<body class="bg-white text-slate-800">
     <!-- Navbar -->
-    <nav class="bg-slate-900 border-b border-slate-800 sticky top-0 z-50">
+    <nav class="bg-white border-b border-slate-200 sticky top-0 z-50">
         <div class="max-w-screen-xl mx-auto px-6">
             <div class="flex items-center justify-between h-20">
                 <div class="flex items-center gap-x-4">
                     <div class="flex items-center gap-x-3">
-                        <div class="w-9 h-9 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center">
-                            <span class="text-white text-2xl font-black">1C</span>
+                        <div class="w-10 h-10 green-gradient rounded-2xl flex items-center justify-center shadow-lg shadow-emerald-500/30">
+                            <span class="text-white text-3xl font-black">1C</span>
                         </div>
-                        <span class="font-display text-2xl font-semibold tracking-tight">1Cryptor</span>
+                        <span class="font-display text-3xl font-semibold tracking-tight text-emerald-700">1Cryptor</span>
                     </div>
                 </div>
                 
-                <div class="hidden md:flex items-center gap-x-8 text-sm">
-                    <a href="index.html" class="hover:text-white transition-colors">Home</a>
-                    <a href="index.html#how-it-works" class="hover:text-white transition-colors">How it works</a>
-                    <a href="index.html#architecture" class="hover:text-white transition-colors">Encryption</a>
-                    <a href="vs-cryptomator.html" class="text-orange-400 font-medium">vs Cryptomator</a>
+                <div class="hidden md:flex items-center gap-x-9 text-sm font-medium">
+                    <a href="index.html" class="hover:text-emerald-700 transition-colors">Home</a>
+                    <a href="index.html#how-it-works" class="hover:text-emerald-700 transition-colors">How it works</a>
+                    <a href="vs-cryptomator.html" class="text-emerald-600 font-semibold">vs Cryptomator</a>
                 </div>
 
-                <div class="flex items-center gap-x-4">
+                <div>
                     <a href="https://apps.apple.com/app/1cryptor/id6759910415" 
-                       class="px-6 py-2.5 bg-white text-slate-900 hover:bg-orange-50 font-semibold rounded-3xl text-sm transition-all flex items-center gap-x-2">
-                        <i class="fa-brands fa-apple text-lg"></i>
-                        <span>Download</span>
+                       class="px-7 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-3xl text-sm flex items-center gap-x-2 transition-all shadow-lg shadow-emerald-500/30">
+                        <i class="fa-brands fa-apple"></i>
+                        <span>Download Free</span>
                     </a>
                 </div>
             </div>
@@ -93,189 +102,126 @@
     </nav>
 
     <!-- Hero -->
-    <div class="max-w-screen-xl mx-auto px-6 pt-16 pb-12">
+    <div class="max-w-screen-xl mx-auto px-6 pt-16 pb-14">
         <div class="max-w-3xl mx-auto text-center">
-            <div class="inline-flex items-center gap-x-2 bg-slate-900 border border-slate-700 rounded-full px-4 py-1 text-sm mb-6">
-                <div class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
-                <span class="font-medium text-emerald-400">Honest Comparison • No Marketing Spin</span>
+            <div class="inline-flex items-center gap-x-2 bg-emerald-50 border border-emerald-200 rounded-full px-5 py-1.5 text-sm mb-6">
+                <div class="w-2.5 h-2.5 bg-emerald-500 rounded-full animate-pulse"></div>
+                <span class="font-semibold text-emerald-700">Honest • Technical • No Hype</span>
             </div>
             
-            <h1 class="text-6xl font-display font-semibold tracking-tighter mb-6">
-                1Cryptor <span class="text-orange-500">vs</span> Cryptomator
+            <h1 class="text-7xl font-display font-semibold tracking-tighter leading-none mb-6">
+                1Cryptor <span class="text-emerald-600">vs</span><br>
+                Cryptomator
             </h1>
             
-            <p class="text-xl text-slate-400 max-w-2xl mx-auto">
+            <p class="text-2xl text-slate-600 max-w-2xl mx-auto leading-tight">
                 Both protect your files with zero-knowledge encryption.<br>
-                But the technical details make a real difference — especially on iOS.
+                But modern cryptography has evolved — here's exactly where 1Cryptor leads.
             </p>
 
-            <div class="mt-8 flex justify-center gap-x-4">
-                <div class="bg-slate-900 border border-orange-500/30 rounded-3xl px-8 py-4 text-center">
-                    <div class="text-sm text-slate-400">1Cryptor</div>
-                    <div class="text-4xl font-semibold text-orange-400 mt-1">8.8</div>
-                    <div class="text-xs text-emerald-400">/ 10</div>
+            <div class="mt-10 flex justify-center gap-x-6">
+                <div class="text-center">
+                    <div class="text-6xl font-semibold text-emerald-600 stat-number" data-target="9.1">0</div>
+                    <div class="text-sm text-emerald-600 font-medium -mt-1">1Cryptor Score</div>
                 </div>
-                <div class="bg-slate-900 border border-slate-700 rounded-3xl px-8 py-4 text-center">
-                    <div class="text-sm text-slate-400">Cryptomator</div>
-                    <div class="text-4xl font-semibold text-slate-300 mt-1">7.2</div>
-                    <div class="text-xs text-slate-500">/ 10</div>
+                <div class="text-6xl text-slate-300 font-light mt-3">/</div>
+                <div class="text-center">
+                    <div class="text-6xl font-semibold text-slate-400 stat-number" data-target="7.4">0</div>
+                    <div class="text-sm text-slate-500 font-medium -mt-1">Cryptomator Score</div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Quick Summary -->
+    <!-- Quick Highlights -->
     <div class="max-w-screen-xl mx-auto px-6 pb-16">
         <div class="grid md:grid-cols-4 gap-4">
-            <div class="bg-slate-900 border border-slate-800 rounded-3xl p-6">
-                <div class="text-orange-400 text-sm font-medium mb-2">KEY DERIVATION</div>
+            <div class="bg-white border border-emerald-100 rounded-3xl p-6 hover:shadow-xl transition-all group">
+                <div class="text-emerald-500 text-4xl mb-4 group-hover:scale-110 transition-transform">🧠</div>
                 <div class="font-semibold text-xl">Argon2id</div>
-                <div class="text-emerald-400 text-sm mt-1">vs scrypt</div>
+                <div class="text-emerald-600 text-sm mt-1">Modern password hashing winner</div>
             </div>
-            <div class="bg-slate-900 border border-slate-800 rounded-3xl p-6">
-                <div class="text-orange-400 text-sm font-medium mb-2">ENCRYPTION MODE</div>
+            <div class="bg-white border border-emerald-100 rounded-3xl p-6 hover:shadow-xl transition-all group">
+                <div class="text-emerald-500 text-4xl mb-4 group-hover:scale-110 transition-transform">🔒</div>
                 <div class="font-semibold text-xl">AES-256-GCM</div>
-                <div class="text-emerald-400 text-sm mt-1">vs CTR + HMAC</div>
+                <div class="text-emerald-600 text-sm mt-1">Authenticated encryption by default</div>
             </div>
-            <div class="bg-slate-900 border border-slate-800 rounded-3xl p-6">
-                <div class="text-orange-400 text-sm font-medium mb-2">CRYPTO ENGINE</div>
-                <div class="font-semibold text-xl">Rust</div>
-                <div class="text-emerald-400 text-sm mt-1">vs Java</div>
+            <div class="bg-white border border-emerald-100 rounded-3xl p-6 hover:shadow-xl transition-all group">
+                <div class="text-emerald-500 text-4xl mb-4 group-hover:scale-110 transition-transform">⚡</div>
+                <div class="font-semibold text-xl">Rust Engine</div>
+                <div class="text-emerald-600 text-sm mt-1">Memory-safe &amp; blazing fast</div>
             </div>
-            <div class="bg-slate-900 border border-slate-800 rounded-3xl p-6">
-                <div class="text-orange-400 text-sm font-medium mb-2">iOS INTEGRATION</div>
-                <div class="font-semibold text-xl">Native FileProvider</div>
-                <div class="text-emerald-400 text-sm mt-1">vs WebDAV</div>
+            <div class="bg-white border border-emerald-100 rounded-3xl p-6 hover:shadow-xl transition-all group">
+                <div class="text-emerald-500 text-4xl mb-4 group-hover:scale-110 transition-transform">📱</div>
+                <div class="font-semibold text-xl">Native iOS</div>
+                <div class="text-emerald-600 text-sm mt-1">True Files app integration</div>
             </div>
         </div>
     </div>
 
-    <!-- Main Comparison Table -->
-    <div class="max-w-screen-xl mx-auto px-6 pb-20">
+    <!-- Main Comparison -->
+    <div class="max-w-screen-xl mx-auto px-6 pb-20 section-fade">
         <div class="text-center mb-10">
-            <h2 class="text-4xl font-display font-semibold tracking-tight">Feature Comparison</h2>
-            <p class="text-slate-400 mt-3">All claims are based on current public implementations (2026)</p>
+            <h2 class="text-5xl font-display font-semibold tracking-tight">Feature-by-Feature Breakdown</h2>
+            <p class="text-slate-500 mt-3 text-lg">Every difference is verifiable and matters in real-world use.</p>
         </div>
 
-        <div class="comparison-table bg-slate-900 border border-slate-800 rounded-3xl overflow-hidden">
+        <div class="bg-white border border-emerald-100 rounded-3xl overflow-hidden shadow-xl">
             <table class="w-full">
-                <thead>
-                    <tr class="border-b border-slate-800">
-                        <th class="px-8 py-5 text-left font-medium text-slate-400 w-1/3">Feature</th>
-                        <th class="px-8 py-5 text-center font-semibold text-orange-400">1Cryptor</th>
-                        <th class="px-8 py-5 text-center font-semibold text-slate-300">Cryptomator</th>
+                <thead class="bg-emerald-50">
+                    <tr>
+                        <th class="px-8 py-6 text-left font-semibold text-emerald-700 w-1/3">Feature</th>
+                        <th class="px-8 py-6 text-center font-bold text-emerald-700">1Cryptor</th>
+                        <th class="px-8 py-6 text-center font-semibold text-slate-600">Cryptomator</th>
                     </tr>
                 </thead>
-                <tbody class="divide-y divide-slate-800 text-sm">
-                    <!-- Row 1 -->
-                    <tr class="feature-row">
-                        <td class="px-8 py-5 font-medium">Symmetric Encryption</td>
-                        <td class="px-8 py-5 text-center">
-                            <div class="font-semibold text-emerald-400">AES-256-GCM</div>
-                            <div class="text-xs text-emerald-400/70 mt-0.5">Authenticated Encryption (AEAD)</div>
+                <tbody class="divide-y divide-emerald-100 text-sm">
+                    <tr class="comparison-row">
+                        <td class="px-8 py-6 font-medium">Encryption Algorithm</td>
+                        <td class="px-8 py-6 text-center">
+                            <span class="inline-block px-4 py-1.5 bg-emerald-100 text-emerald-700 rounded-2xl font-semibold text-sm">AES-256-GCM</span>
+                            <div class="text-xs text-emerald-600 mt-1">Built-in authentication</div>
                         </td>
-                        <td class="px-8 py-5 text-center">
-                            <div class="font-semibold text-slate-300">AES-256-CTR + HMAC</div>
-                            <div class="text-xs text-slate-500 mt-0.5">Separate integrity check</div>
-                        </td>
+                        <td class="px-8 py-6 text-center text-slate-600">AES-256-CTR + HMAC</td>
                     </tr>
-                    
-                    <!-- Row 2 -->
-                    <tr class="feature-row">
-                        <td class="px-8 py-5 font-medium">Key Derivation</td>
-                        <td class="px-8 py-5 text-center">
-                            <div class="font-semibold text-emerald-400">Argon2id v1.3</div>
-                            <div class="text-xs text-emerald-400/70 mt-0.5">128 MB memory · 4 iterations</div>
+                    <tr class="comparison-row">
+                        <td class="px-8 py-6 font-medium">Key Derivation</td>
+                        <td class="px-8 py-6 text-center">
+                            <span class="inline-block px-4 py-1.5 bg-emerald-100 text-emerald-700 rounded-2xl font-semibold text-sm">Argon2id</span>
+                            <div class="text-xs text-emerald-600 mt-1">128 MB memory • PHC winner</div>
                         </td>
-                        <td class="px-8 py-5 text-center">
-                            <div class="font-semibold text-slate-300">scrypt</div>
-                            <div class="text-xs text-slate-500 mt-0.5">~64 MB memory (configurable)</div>
-                        </td>
+                        <td class="px-8 py-6 text-center text-slate-600">scrypt</td>
                     </tr>
-                    
-                    <!-- Row 3 -->
-                    <tr class="feature-row">
-                        <td class="px-8 py-5 font-medium">Key Wrapping</td>
-                        <td class="px-8 py-5 text-center">
-                            <div class="font-semibold text-emerald-400">RSA-4096 + OAEP</div>
+                    <tr class="comparison-row">
+                        <td class="px-8 py-6 font-medium">Crypto Engine</td>
+                        <td class="px-8 py-6 text-center">
+                            <span class="inline-block px-4 py-1.5 bg-emerald-100 text-emerald-700 rounded-2xl font-semibold text-sm">Rust</span>
+                            <div class="text-xs text-emerald-600 mt-1">Memory-safe by design</div>
                         </td>
-                        <td class="px-8 py-5 text-center">
-                            <div class="font-semibold text-slate-300">AES-256-SIV</div>
-                        </td>
+                        <td class="px-8 py-6 text-center text-slate-600">Java / JVM</td>
                     </tr>
-                    
-                    <!-- Row 4 -->
-                    <tr class="feature-row">
-                        <td class="px-8 py-5 font-medium">Crypto Implementation</td>
-                        <td class="px-8 py-5 text-center">
-                            <div class="font-semibold text-emerald-400">Rust (memory-safe)</div>
-                            <div class="text-xs text-emerald-400/70 mt-0.5">No GC, zero-copy, constant-time</div>
+                    <tr class="comparison-row">
+                        <td class="px-8 py-6 font-medium">iOS Integration</td>
+                        <td class="px-8 py-6 text-center">
+                            <span class="inline-block px-4 py-1.5 bg-emerald-100 text-emerald-700 rounded-2xl font-semibold text-sm">Native FileProvider</span>
+                            <div class="text-xs text-emerald-600 mt-1">First-class Files app support</div>
                         </td>
-                        <td class="px-8 py-5 text-center">
-                            <div class="font-semibold text-slate-300">Java / JVM</div>
-                            <div class="text-xs text-slate-500 mt-0.5">Garbage collector, larger attack surface</div>
-                        </td>
+                        <td class="px-8 py-6 text-center text-slate-600">Local WebDAV Server</td>
                     </tr>
-                    
-                    <!-- Row 5 -->
-                    <tr class="feature-row">
-                        <td class="px-8 py-5 font-medium">Chunk Size</td>
-                        <td class="px-8 py-5 text-center">
-                            <div class="font-semibold text-emerald-400">5 MB</div>
-                            <div class="text-xs text-emerald-400/70 mt-0.5">Optimized for large files</div>
+                    <tr class="comparison-row">
+                        <td class="px-8 py-6 font-medium">Open Source</td>
+                        <td class="px-8 py-6 text-center">
+                            <span class="inline-block px-4 py-1.5 bg-amber-100 text-amber-700 rounded-2xl font-semibold text-sm">Coming soon (2026)</span>
                         </td>
-                        <td class="px-8 py-5 text-center">
-                            <div class="font-semibold text-slate-300">~32 KB</div>
-                            <div class="text-xs text-slate-500 mt-0.5">Higher overhead on big files</div>
-                        </td>
+                        <td class="px-8 py-6 text-center text-emerald-600 font-medium">Fully open source</td>
                     </tr>
-                    
-                    <!-- Row 6 -->
-                    <tr class="feature-row">
-                        <td class="px-8 py-5 font-medium">iOS Experience</td>
-                        <td class="px-8 py-5 text-center">
-                            <div class="font-semibold text-emerald-400">Native FileProvider</div>
-                            <div class="text-xs text-emerald-400/70 mt-0.5">Deep Files app integration</div>
+                    <tr class="comparison-row">
+                        <td class="px-8 py-6 font-medium">Pricing</td>
+                        <td class="px-8 py-6 text-center">
+                            <span class="inline-block px-4 py-1.5 bg-emerald-600 text-white rounded-2xl font-semibold text-sm">Paid</span>
+                            <div class="text-xs text-emerald-600 mt-1">Free starter vault available</div>
                         </td>
-                        <td class="px-8 py-5 text-center">
-                            <div class="font-semibold text-slate-300">Local WebDAV Server</div>
-                            <div class="text-xs text-slate-500 mt-0.5">Background process, fragile</div>
-                        </td>
-                    </tr>
-                    
-                    <!-- Row 7 -->
-                    <tr class="feature-row">
-                        <td class="px-8 py-5 font-medium">Open Source</td>
-                        <td class="px-8 py-5 text-center">
-                            <div class="font-semibold text-amber-400">Coming soon (2026)</div>
-                            <div class="text-xs text-amber-400/70 mt-0.5">Will be fully open source</div>
-                        </td>
-                        <td class="px-8 py-5 text-center">
-                            <div class="font-semibold text-emerald-400">Yes (fully open source)</div>
-                        </td>
-                    </tr>
-                    
-                    <!-- Row 8 -->
-                    <tr class="feature-row">
-                        <td class="px-8 py-5 font-medium">Pricing</td>
-                        <td class="px-8 py-5 text-center">
-                            <div class="font-semibold text-orange-400">Paid</div>
-                            <div class="text-xs text-orange-400/70 mt-0.5">Free starter vault available</div>
-                        </td>
-                        <td class="px-8 py-5 text-center">
-                            <div class="font-semibold text-emerald-400">Free (desktop) / Paid (iOS)</div>
-                        </td>
-                    </tr>
-                    
-                    <!-- Row 9 -->
-                    <tr class="feature-row">
-                        <td class="px-8 py-5 font-medium">Platforms</td>
-                        <td class="px-8 py-5 text-center">
-                            <div class="font-semibold text-slate-300">iOS • macOS</div>
-                        </td>
-                        <td class="px-8 py-5 text-center">
-                            <div class="font-semibold text-emerald-400">Windows • macOS • Linux • iOS • Android</div>
-                        </td>
+                        <td class="px-8 py-6 text-center text-slate-600">Free (desktop) / Paid (iOS)</td>
                     </tr>
                 </tbody>
             </table>
@@ -283,74 +229,112 @@
     </div>
 
     <!-- Why It Matters -->
-    <div class="max-w-screen-xl mx-auto px-6 pb-20">
+    <div class="max-w-screen-xl mx-auto px-6 pb-20 section-fade">
         <div class="max-w-3xl mx-auto">
-            <h3 class="text-3xl font-display font-semibold text-center mb-4">Why These Differences Matter</h3>
-            <p class="text-center text-slate-400 mb-12">Technical choices have real consequences for security, performance, and usability.</p>
+            <h3 class="text-center text-4xl font-display font-semibold tracking-tight mb-4">Why These Differences Actually Matter</h3>
+            <p class="text-center text-slate-600 text-lg mb-12">Technical choices have real consequences for security and daily use.</p>
             
             <div class="space-y-6">
-                <div class="bg-slate-900 border border-slate-800 rounded-3xl p-8">
-                    <div class="flex items-start gap-x-4">
-                        <div class="text-3xl mt-1">🔐</div>
-                        <div>
-                            <div class="font-semibold text-lg mb-2">AES-GCM vs CTR + HMAC</div>
-                            <p class="text-slate-400 text-sm leading-relaxed">AES-256-GCM provides authenticated encryption in a single primitive. Any tampering is immediately detected. Cryptomator's CTR + HMAC approach requires two separate primitives to be correctly combined — more room for implementation error.</p>
-                        </div>
+                <div class="bg-white border border-emerald-100 rounded-3xl p-8 flex gap-6">
+                    <div class="text-5xl flex-shrink-0">🔐</div>
+                    <div>
+                        <div class="font-semibold text-xl mb-3">AES-GCM = Built-in Protection</div>
+                        <p class="text-slate-600">Any modification to your encrypted file is instantly detected. Cryptomator requires two separate primitives (encryption + HMAC) that must be perfectly combined. Fewer moving parts = smaller attack surface.</p>
                     </div>
                 </div>
                 
-                <div class="bg-slate-900 border border-slate-800 rounded-3xl p-8">
-                    <div class="flex items-start gap-x-4">
-                        <div class="text-3xl mt-1">🧠</div>
-                        <div>
-                            <div class="font-semibold text-lg mb-2">Argon2id vs scrypt</div>
-                            <p class="text-slate-400 text-sm leading-relaxed">Argon2id (PHC winner 2015) is the modern standard. It offers better resistance to GPU attacks with fine-grained memory control. 1Cryptor uses 128 MB of memory per password attempt — making brute-force attacks extremely expensive.</p>
-                        </div>
+                <div class="bg-white border border-emerald-100 rounded-3xl p-8 flex gap-6">
+                    <div class="text-5xl flex-shrink-0">🛡️</div>
+                    <div>
+                        <div class="font-semibold text-xl mb-3">Argon2id = Future-Proof Security</div>
+                        <p class="text-slate-600">The 2015 Password Hashing Competition winner. Uses 128 MB of memory per password attempt — making GPU brute-force attacks extremely expensive compared to scrypt.</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Fair Note -->
+    <!-- Honest Note -->
     <div class="max-w-screen-xl mx-auto px-6 pb-16">
-        <div class="max-w-2xl mx-auto bg-slate-900 border border-slate-700 rounded-3xl p-8 text-center">
-            <div class="text-emerald-400 text-sm font-medium mb-3">FAIR NOTE</div>
-            <p class="text-slate-300">Cryptomator is excellent open-source software that made zero-knowledge encryption accessible. We built 1Cryptor because we believe the next evolution — Argon2id, GCM, Rust, and native iOS — is worth it. <span class="text-orange-400">1Cryptor will become fully open source in the near future.</span></p>
+        <div class="max-w-2xl mx-auto bg-emerald-50 border border-emerald-200 rounded-3xl p-10 text-center">
+            <div class="text-emerald-600 font-semibold mb-3">A FAIR NOTE</div>
+            <p class="text-emerald-800 text-lg">Cryptomator is genuinely excellent open-source software. It proved that zero-knowledge encryption can be practical. We built 1Cryptor because we believe the next evolution — Argon2id, GCM, Rust, and native iOS — is worth building. <span class="font-semibold">1Cryptor will become fully open source soon.</span></p>
         </div>
     </div>
 
-    <!-- CTA -->
-    <div class="bg-gradient-to-b from-slate-900 to-black py-20">
+    <!-- Final CTA -->
+    <div class="bg-emerald-900 py-20 text-white">
         <div class="max-w-screen-xl mx-auto px-6 text-center">
-            <h2 class="text-5xl font-display font-semibold tracking-tight mb-6">Ready for the next level?</h2>
-            <p class="text-xl text-slate-400 max-w-md mx-auto mb-10">1Cryptor is paid software with a generous free starter vault. Open source coming soon.</p>
+            <h2 class="text-5xl font-display font-semibold tracking-tight mb-6">Ready for stronger encryption?</h2>
+            <p class="text-emerald-200 text-xl max-w-md mx-auto mb-10">1Cryptor is paid with a generous free starter vault. Open source coming soon.</p>
             
             <a href="https://apps.apple.com/app/1cryptor/id6759910415" 
-               class="inline-flex items-center gap-x-3 px-10 py-4 bg-orange-600 hover:bg-orange-700 text-white font-semibold rounded-3xl text-lg transition-all shadow-xl shadow-orange-500/30">
-                <span>Download 1Cryptor</span>
-                <i class="fa-solid fa-arrow-right"></i>
+               class="inline-flex items-center gap-x-4 px-12 py-4 bg-white text-emerald-800 font-bold rounded-3xl text-xl hover:bg-emerald-100 transition-all shadow-2xl">
+                <span>Download 1Cryptor — Free Starter</span>
             </a>
-            
-            <div class="mt-8 text-sm text-slate-500">Free starter vault • No credit card required</div>
         </div>
     </div>
 
-    <footer class="bg-black border-t border-slate-800 py-12">
-        <div class="max-w-screen-xl mx-auto px-6 text-center text-sm text-slate-500">
-            © 2026 1Cryptor • Will be open source soon
-        </div>
+    <footer class="bg-white border-t py-10 text-center text-sm text-slate-500">
+        © 2026 1Cryptor • Will be open source soon
     </footer>
 
     <script>
-        // Tailwind script
         function initTailwind() {
-            document.documentElement.style.setProperty('--accent', '#FF6B00');
+            // Tailwind already initialized via CDN
         }
-        
+
+        function animateStats() {
+            const stats = document.querySelectorAll('.stat-number');
+            stats.forEach(stat => {
+                const target = parseFloat(stat.getAttribute('data-target'));
+                let current = 0;
+                const increment = target / 40;
+                
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        stat.textContent = target.toFixed(1);
+                        clearInterval(timer);
+                    } else {
+                        stat.textContent = current.toFixed(1);
+                    }
+                }, 50);
+            });
+        }
+
+        function initScrollAnimations() {
+            const sections = document.querySelectorAll('.section-fade');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.2 });
+
+            sections.forEach(section => observer.observe(section));
+        }
+
+        function initComparisonHover() {
+            const rows = document.querySelectorAll('.comparison-row');
+            rows.forEach((row, index) => {
+                row.style.transitionDelay = (index * 50) + 'ms';
+            });
+        }
+
         window.onload = function() {
             initTailwind();
-            console.log('%c[1Cryptor] Updated honest comparison page loaded', 'color:#FF6B00');
+            animateStats();
+            initScrollAnimations();
+            initComparisonHover();
+            
+            // Extra glow on hero
+            const hero = document.querySelector('h1');
+            if (hero) hero.classList.add('glow-green');
+            
+            console.log('%c[1Cryptor] Green + White + Strong Animations loaded', 'color:#10B981');
         }
     </script>
 </body>

@@ -62,7 +62,7 @@
 
     <main>
 
-        <!-- HERO -->
+        <!-- ══════ HERO ══════ -->
         <section class="hero" id="home">
             <canvas id="hero-canvas"></canvas>
             <div class="hero-overlay"></div>
@@ -84,25 +84,13 @@
                         We have <strong>no keys, no backdoors</strong>, and no ability to read what you store.
                     </p>
                     <div class="hero-specs" data-reveal>
-                        <div class="hs-item">
-                            <div class="hs-val">AES-256-GCM</div>
-                            <div class="hs-key">Content Cipher</div>
-                        </div>
+                        <div class="hs-item"><div class="hs-val">AES-256-GCM</div><div class="hs-key">Content Cipher</div></div>
                         <div class="hs-sep"></div>
-                        <div class="hs-item">
-                            <div class="hs-val">RSA-4096</div>
-                            <div class="hs-key">Key Wrapping</div>
-                        </div>
+                        <div class="hs-item"><div class="hs-val">RSA-4096</div><div class="hs-key">Key Wrapping</div></div>
                         <div class="hs-sep"></div>
-                        <div class="hs-item">
-                            <div class="hs-val">Argon2id</div>
-                            <div class="hs-key">Key Derivation</div>
-                        </div>
+                        <div class="hs-item"><div class="hs-val">Argon2id</div><div class="hs-key">Key Derivation</div></div>
                         <div class="hs-sep"></div>
-                        <div class="hs-item">
-                            <div class="hs-val">Zero-Knowledge</div>
-                            <div class="hs-key">Architecture</div>
-                        </div>
+                        <div class="hs-item"><div class="hs-val">Zero-Knowledge</div><div class="hs-key">Architecture</div></div>
                     </div>
                     <div class="hero-actions" data-reveal>
                         <a href="https://apps.apple.com/app/1cryptor/id6759910415" class="btn-green magnetic">
@@ -117,23 +105,13 @@
                 </div>
 
                 <div class="hero-right" data-reveal>
-                    <!-- Encryption Panel -->
                     <div class="enc-panel" id="tilt-panel">
                         <div class="enc-panel-header">
-                            <div class="ep-dots">
-                                <span class="ep-d red"></span>
-                                <span class="ep-d yellow"></span>
-                                <span class="ep-d green"></span>
-                            </div>
+                            <div class="ep-dots"><span class="ep-d red"></span><span class="ep-d yellow"></span><span class="ep-d green"></span></div>
                             <span class="ep-title">1Cryptor — Vault Status</span>
                         </div>
-
                         <div class="enc-shield-wrap">
-                            <div class="enc-rings">
-                                <div class="er er1"></div>
-                                <div class="er er2"></div>
-                                <div class="er er3"></div>
-                            </div>
+                            <div class="enc-rings"><div class="er er1"></div><div class="er er2"></div><div class="er er3"></div></div>
                             <div class="enc-shield">
                                 <svg viewBox="0 0 80 96" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M40 4L8 16V44C8 62.4 22.4 79.6 40 84C57.6 79.6 72 62.4 72 44V16L40 4Z" fill="rgba(0,98,46,0.08)" stroke="#006232" stroke-width="2" stroke-linejoin="round"/>
@@ -143,325 +121,99 @@
                             </div>
                             <div class="enc-code-stream" id="code-stream"></div>
                         </div>
-
                         <div class="enc-rows">
-                            <div class="er-row">
-                                <span class="er-label">Vault Status</span>
-                                <span class="er-val green">
-                                    <span class="er-dot green-dot"></span> Protected
-                                </span>
-                            </div>
-                            <div class="er-row">
-                                <span class="er-label">Encryption</span>
-                                <span class="er-val green">
-                                    <span class="er-dot green-dot"></span> AES-256-GCM Active
-                                </span>
-                            </div>
-                            <div class="er-row">
-                                <span class="er-label">Cloud Read Access</span>
-                                <span class="er-val red">
-                                    <span class="er-dot red-dot"></span> Denied
-                                </span>
-                            </div>
-                            <div class="er-row">
-                                <span class="er-label">Server-Side Keys</span>
-                                <span class="er-val red">
-                                    <span class="er-dot red-dot"></span> None
-                                </span>
-                            </div>
-                            <div class="er-row">
-                                <span class="er-label">Backdoor</span>
-                                <span class="er-val red">
-                                    <span class="er-dot red-dot"></span> None
-                                </span>
-                            </div>
+                            <div class="er-row"><span class="er-label">Vault Status</span><span class="er-val green"><span class="er-dot green-dot"></span> Protected</span></div>
+                            <div class="er-row"><span class="er-label">Encryption</span><span class="er-val green"><span class="er-dot green-dot"></span> AES-256-GCM Active</span></div>
+                            <div class="er-row"><span class="er-label">Cloud Read Access</span><span class="er-val red"><span class="er-dot red-dot"></span> Denied</span></div>
+                            <div class="er-row"><span class="er-label">Server-Side Keys</span><span class="er-val red"><span class="er-dot red-dot"></span> None</span></div>
+                            <div class="er-row"><span class="er-label">Backdoor</span><span class="er-val red"><span class="er-dot red-dot"></span> None</span></div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="hero-scroll-cue">
-                <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
-            </div>
+            <div class="hero-scroll-cue"><div class="scroll-mouse"><div class="scroll-wheel"></div></div></div>
         </section>
 
-        <!-- MARQUEE -->
+        <!-- ══════ MARQUEE ══════ -->
         <div class="marquee-band">
             <div class="marquee-inner">
                 <div class="marquee-row">
-                    <span>AES-256-GCM</span><i>·</i>
-                    <span>RSA-4096</span><i>·</i>
-                    <span>Argon2id v1.3</span><i>·</i>
-                    <span>Zero Knowledge</span><i>·</i>
-                    <span>On-Device Encryption</span><i>·</i>
-                    <span>5 MB Secure Chunks</span><i>·</i>
-                    <span>Rust Crypto Engine</span><i>·</i>
-                    <span>No Backdoors</span><i>·</i>
-                    <span>End-to-End Private</span><i>·</i>
-                    <span>AES-256-GCM</span><i>·</i>
-                    <span>RSA-4096</span><i>·</i>
-                    <span>Argon2id v1.3</span><i>·</i>
-                    <span>Zero Knowledge</span><i>·</i>
-                    <span>On-Device Encryption</span><i>·</i>
-                    <span>5 MB Secure Chunks</span><i>·</i>
-                    <span>Rust Crypto Engine</span><i>·</i>
-                    <span>No Backdoors</span><i>·</i>
-                    <span>End-to-End Private</span><i>·</i>
+                    <span>AES-256-GCM</span><i>·</i><span>RSA-4096</span><i>·</i><span>Argon2id v1.3</span><i>·</i><span>Zero Knowledge</span><i>·</i><span>On-Device Encryption</span><i>·</i><span>5 MB Secure Chunks</span><i>·</i><span>Rust Crypto Engine</span><i>·</i><span>No Backdoors</span><i>·</i><span>End-to-End Private</span><i>·</i>
+                    <span>AES-256-GCM</span><i>·</i><span>RSA-4096</span><i>·</i><span>Argon2id v1.3</span><i>·</i><span>Zero Knowledge</span><i>·</i><span>On-Device Encryption</span><i>·</i><span>5 MB Secure Chunks</span><i>·</i><span>Rust Crypto Engine</span><i>·</i><span>No Backdoors</span><i>·</i><span>End-to-End Private</span><i>·</i>
                 </div>
             </div>
         </div>
 
-        <!-- GUARANTEE BANNER -->
+        <!-- ══════ GUARANTEE BANNER ══════ -->
         <section class="guarantee-banner">
             <div class="container">
                 <div class="gb-grid">
-                    <div class="gb-item" data-reveal>
-                        <div class="gb-ico">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
-                        </div>
-                        <div>
-                            <strong>We cannot read your files.</strong>
-                            <p>Technically impossible — keys never leave your device.</p>
-                        </div>
-                    </div>
+                    <div class="gb-item" data-reveal><div class="gb-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></div><div><strong>We cannot read your files.</strong><p>Technically impossible — keys never leave your device.</p></div></div>
                     <div class="gb-div"></div>
-                    <div class="gb-item" data-reveal>
-                        <div class="gb-ico">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                        </div>
-                        <div>
-                            <strong>A breach reveals nothing.</strong>
-                            <p>Attackers get only unreadable ciphertext, never plaintext.</p>
-                        </div>
-                    </div>
+                    <div class="gb-item" data-reveal><div class="gb-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div><div><strong>A breach reveals nothing.</strong><p>Attackers get only unreadable ciphertext, never plaintext.</p></div></div>
                     <div class="gb-div"></div>
-                    <div class="gb-item" data-reveal>
-                        <div class="gb-ico">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
-                        </div>
-                        <div>
-                            <strong>No court order can help.</strong>
-                            <p>Nothing readable to compel or disclose — by design.</p>
-                        </div>
-                    </div>
+                    <div class="gb-item" data-reveal><div class="gb-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg></div><div><strong>No court order can help.</strong><p>Nothing readable to compel or disclose — by design.</p></div></div>
                 </div>
             </div>
         </section>
 
-        <!-- VS COMPARISON -->
+        <!-- ══════ VS COMPARISON ══════ -->
         <section class="vs-section" id="how-it-works">
             <div class="container">
-                <div class="section-head" data-reveal>
-                    <p class="eyebrow">ZERO KNOWLEDGE GUARANTEE</p>
-                    <h2>Standard cloud vs.<br><em>1Cryptor encryption.</em></h2>
-                    <p class="section-desc">See exactly what changes when you encrypt before you sync.</p>
-                </div>
+                <div class="section-head" data-reveal><p class="eyebrow">ZERO KNOWLEDGE GUARANTEE</p><h2>Standard cloud vs.<br><em>1Cryptor encryption.</em></h2><p class="section-desc">See exactly what changes when you encrypt before you sync.</p></div>
                 <div class="vs-grid">
-                    <div class="vs-card vs-bad" data-reveal>
-                        <div class="vsc-head">
-                            <div class="vsc-ico red">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
-                            </div>
-                            <div>
-                                <h3>Standard Cloud Storage</h3>
-                                <p>iCloud, Google Drive, Dropbox — without encryption</p>
-                            </div>
-                        </div>
-                        <ul>
-                            <li>Provider can read every file you upload</li>
-                            <li>Employees may access your data</li>
-                            <li>Government orders compel disclosure</li>
-                            <li>A breach exposes all your real content</li>
-                            <li>Filenames reveal what you store</li>
-                            <li>Metadata is fully visible and searchable</li>
-                        </ul>
-                    </div>
-                    <div class="vs-mid" data-reveal>
-                        <div class="vs-mid-line"></div>
-                        <div class="vs-vs">VS</div>
-                        <div class="vs-mid-line"></div>
-                    </div>
-                    <div class="vs-card vs-good" data-reveal>
-                        <div class="vsc-head">
-                            <div class="vsc-ico green">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                            </div>
-                            <div>
-                                <h3>1Cryptor Encrypted Vault</h3>
-                                <p>Your cloud + 1Cryptor on-device encryption</p>
-                            </div>
-                        </div>
-                        <ul>
-                            <li>Cloud receives only unreadable ciphertext</li>
-                            <li>No one but you holds the decryption keys</li>
-                            <li>Nothing readable to compel or disclose</li>
-                            <li>A breach yields useless encrypted blobs</li>
-                            <li>Filenames are encrypted too</li>
-                            <li>All metadata encrypted before upload</li>
-                        </ul>
-                    </div>
+                    <div class="vs-card vs-bad" data-reveal><div class="vsc-head"><div class="vsc-ico red"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg></div><div><h3>Standard Cloud Storage</h3><p>iCloud, Google Drive, Dropbox — without encryption</p></div></div><ul><li>Provider can read every file you upload</li><li>Employees may access your data</li><li>Government orders compel disclosure</li><li>A breach exposes all your real content</li><li>Filenames reveal what you store</li><li>Metadata is fully visible and searchable</li></ul></div>
+                    <div class="vs-mid" data-reveal><div class="vs-mid-line"></div><div class="vs-vs">VS</div><div class="vs-mid-line"></div></div>
+                    <div class="vs-card vs-good" data-reveal><div class="vsc-head"><div class="vsc-ico green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div><h3>1Cryptor Encrypted Vault</h3><p>Your cloud + 1Cryptor on-device encryption</p></div></div><ul><li>Cloud receives only unreadable ciphertext</li><li>No one but you holds the decryption keys</li><li>Nothing readable to compel or disclose</li><li>A breach yields useless encrypted blobs</li><li>Filenames are encrypted too</li><li>All metadata encrypted before upload</li></ul></div>
                 </div>
             </div>
         </section>
 
-        <!-- STEPS -->
+        <!-- ══════ STEPS ══════ -->
         <section class="steps-section">
             <div class="container">
-                <div class="section-head" data-reveal>
-                    <p class="eyebrow">ENCRYPTION PIPELINE</p>
-                    <h2>Five steps from password<br>to encrypted vault.</h2>
-                    <p class="section-desc">Every step runs on your device. Nothing sensitive crosses the network in plaintext.</p>
-                </div>
+                <div class="section-head" data-reveal><p class="eyebrow">ENCRYPTION PIPELINE</p><h2>Five steps from password<br>to encrypted vault.</h2><p class="section-desc">Every step runs on your device. Nothing sensitive crosses the network in plaintext.</p></div>
                 <div class="steps-flow">
-                    <div class="step" data-reveal>
-                        <div class="step-n">01</div>
-                        <div class="step-ico">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/><circle cx="12" cy="16" r="1.5" fill="currentColor" stroke="none"/></svg>
-                        </div>
-                        <h4>Password Input</h4>
-                        <p>Argon2id hashes your password with 128 MB memory and 4 iterations. Brute force is computationally infeasible by design.</p>
-                    </div>
+                    <div class="step" data-reveal><div class="step-n">01</div><div class="step-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/><circle cx="12" cy="16" r="1.5" fill="currentColor" stroke="none"/></svg></div><h4>Password Input</h4><p>Argon2id hashes your password with 128 MB memory and 4 iterations. Brute force is computationally infeasible by design.</p></div>
                     <div class="step-conn" data-reveal><div class="sc-line"></div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-                    <div class="step" data-reveal>
-                        <div class="step-n">02</div>
-                        <div class="step-ico">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/></svg>
-                        </div>
-                        <h4>Private Key Unlock</h4>
-                        <p>The derived key decrypts your RSA-4096 private key stored locally on device. It never leaves in plaintext.</p>
-                    </div>
+                    <div class="step" data-reveal><div class="step-n">02</div><div class="step-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/></svg></div><h4>Private Key Unlock</h4><p>The derived key decrypts your RSA-4096 private key stored locally on device. It never leaves in plaintext.</p></div>
                     <div class="step-conn" data-reveal><div class="sc-line"></div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-                    <div class="step" data-reveal>
-                        <div class="step-n">03</div>
-                        <div class="step-ico">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-                        </div>
-                        <h4>Master Key Recovery</h4>
-                        <p>Private key unwraps the 256-bit master key via OAEP-SHA256. It lives only in memory — never written to disk.</p>
-                    </div>
+                    <div class="step" data-reveal><div class="step-n">03</div><div class="step-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div><h4>Master Key Recovery</h4><p>Private key unwraps the 256-bit master key via OAEP-SHA256. It lives only in memory — never written to disk.</p></div>
                     <div class="step-conn" data-reveal><div class="sc-line"></div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-                    <div class="step" data-reveal>
-                        <div class="step-n">04</div>
-                        <div class="step-ico">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-                        </div>
-                        <h4>Chunk Encryption</h4>
-                        <p>Files split into 5 MB blocks. Each gets a unique random nonce and AES-256-GCM encryption with a 16-byte auth tag.</p>
-                    </div>
+                    <div class="step" data-reveal><div class="step-n">04</div><div class="step-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div><h4>Chunk Encryption</h4><p>Files split into 5 MB blocks. Each gets a unique random nonce and AES-256-GCM encryption with a 16-byte auth tag.</p></div>
                     <div class="step-conn" data-reveal><div class="sc-line"></div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-                    <div class="step" data-reveal>
-                        <div class="step-n">05</div>
-                        <div class="step-ico">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-                        </div>
-                        <h4>Ciphertext Sync</h4>
-                        <p>Only encrypted chunks, encrypted names, and encrypted metadata sync to your cloud. The provider sees nothing readable.</p>
-                    </div>
+                    <div class="step" data-reveal><div class="step-n">05</div><div class="step-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div><h4>Ciphertext Sync</h4><p>Only encrypted chunks, encrypted names, and encrypted metadata sync to your cloud. The provider sees nothing readable.</p></div>
                 </div>
             </div>
         </section>
 
-        <!-- ARCHITECTURE -->
+        <!-- ══════ ARCHITECTURE ══════ -->
         <section class="arch-section" id="architecture" data-bg-tint>
             <div class="container">
-                <div class="section-head" data-reveal>
-                    <p class="eyebrow">CRYPTOGRAPHIC ARCHITECTURE</p>
-                    <h2>Four independent layers<br>of cryptographic protection.</h2>
-                    <p class="section-desc">Defence in depth. If one layer were hypothetically compromised, the others remain fully intact.</p>
-                </div>
+                <div class="section-head" data-reveal><p class="eyebrow">CRYPTOGRAPHIC ARCHITECTURE</p><h2>Four independent layers<br>of cryptographic protection.</h2><p class="section-desc">Defence in depth. If one layer were hypothetically compromised, the others remain fully intact.</p></div>
                 <div class="arch-grid" id="file-encryption">
-                    <div class="arch-card" data-reveal>
-                        <div class="arch-n">01</div>
-                        <div class="arch-title-row">
-                            <h3>Key Derivation</h3>
-                            <span class="arch-badge">Argon2id v1.3</span>
-                        </div>
-                        <p>Your password is never used as an encryption key directly. Argon2id runs with 128 MB memory and 4 iterations — computationally expensive to deter brute-force attacks even with specialised hardware.</p>
-                        <div class="arch-table">
-                            <div class="at-row"><span>Memory</span><strong>131 072 KiB (128 MB)</strong></div>
-                            <div class="at-row"><span>Iterations</span><strong>4 passes</strong></div>
-                            <div class="at-row"><span>Parallelism</span><strong>4 lanes</strong></div>
-                            <div class="at-row"><span>Version</span><strong>0x13 (v1.3)</strong></div>
-                        </div>
-                    </div>
-                    <div class="arch-card" data-reveal>
-                        <div class="arch-n">02</div>
-                        <div class="arch-title-row">
-                            <h3>Master Key Wrapping</h3>
-                            <span class="arch-badge">RSA-4096 + OAEP</span>
-                        </div>
-                        <p>A random 256-bit master key encrypts your data. This key is wrapped with RSA-4096 using OAEP-SHA256 padding. Only your private key — which you alone hold — can unwrap it.</p>
-                        <div class="arch-table">
-                            <div class="at-row"><span>Key Size</span><strong>4096 bits</strong></div>
-                            <div class="at-row"><span>Padding</span><strong>OAEP-SHA256</strong></div>
-                            <div class="at-row"><span>Purpose</span><strong>Key Wrapping</strong></div>
-                            <div class="at-row"><span>Access</span><strong>Private Key Only</strong></div>
-                        </div>
-                    </div>
-                    <div class="arch-card" data-reveal>
-                        <div class="arch-n">03</div>
-                        <div class="arch-title-row">
-                            <h3>Content Encryption</h3>
-                            <span class="arch-badge">AES-256-GCM</span>
-                        </div>
-                        <p>Each 5 MB chunk is encrypted with AES-256-GCM using a cryptographically random 12-byte nonce. A 16-byte authentication tag ensures any tampering — even a single bit flip — is detected immediately.</p>
-                        <div class="arch-table">
-                            <div class="at-row"><span>Key Size</span><strong>256 bits</strong></div>
-                            <div class="at-row"><span>Nonce</span><strong>12 bytes (CSPRNG)</strong></div>
-                            <div class="at-row"><span>Auth Tag</span><strong>16 bytes</strong></div>
-                            <div class="at-row"><span>Mode</span><strong>AEAD</strong></div>
-                        </div>
-                    </div>
-                    <div class="arch-card" data-reveal>
-                        <div class="arch-n">04</div>
-                        <div class="arch-title-row">
-                            <h3>Metadata Encryption</h3>
-                            <span class="arch-badge">Zero Knowledge</span>
-                        </div>
-                        <p>Filenames, extensions, directory structure, and all metadata are encrypted before upload. Your storage provider receives opaque binary blobs with zero identifying information about what you store.</p>
-                        <div class="arch-table">
-                            <div class="at-row"><span>Filenames</span><strong>Encrypted</strong></div>
-                            <div class="at-row"><span>Metadata</span><strong>Encrypted</strong></div>
-                            <div class="at-row"><span>Structure</span><strong>Hidden</strong></div>
-                            <div class="at-row"><span>Cloud View</span><strong>Ciphertext only</strong></div>
-                        </div>
-                    </div>
+                    <div class="arch-card" data-reveal><div class="arch-n">01</div><div class="arch-title-row"><h3>Key Derivation</h3><span class="arch-badge">Argon2id v1.3</span></div><p>Your password is never used as an encryption key directly. Argon2id runs with 128 MB memory and 4 iterations — computationally expensive to deter brute-force attacks even with specialised hardware.</p><div class="arch-table"><div class="at-row"><span>Memory</span><strong>131 072 KiB (128 MB)</strong></div><div class="at-row"><span>Iterations</span><strong>4 passes</strong></div><div class="at-row"><span>Parallelism</span><strong>4 lanes</strong></div><div class="at-row"><span>Version</span><strong>0x13 (v1.3)</strong></div></div></div>
+                    <div class="arch-card" data-reveal><div class="arch-n">02</div><div class="arch-title-row"><h3>Master Key Wrapping</h3><span class="arch-badge">RSA-4096 + OAEP</span></div><p>A random 256-bit master key encrypts your data. This key is wrapped with RSA-4096 using OAEP-SHA256 padding. Only your private key — which you alone hold — can unwrap it.</p><div class="arch-table"><div class="at-row"><span>Key Size</span><strong>4096 bits</strong></div><div class="at-row"><span>Padding</span><strong>OAEP-SHA256</strong></div><div class="at-row"><span>Purpose</span><strong>Key Wrapping</strong></div><div class="at-row"><span>Access</span><strong>Private Key Only</strong></div></div></div>
+                    <div class="arch-card" data-reveal><div class="arch-n">03</div><div class="arch-title-row"><h3>Content Encryption</h3><span class="arch-badge">AES-256-GCM</span></div><p>Each 5 MB chunk is encrypted with AES-256-GCM using a cryptographically random 12-byte nonce. A 16-byte authentication tag ensures any tampering — even a single bit flip — is detected immediately.</p><div class="arch-table"><div class="at-row"><span>Key Size</span><strong>256 bits</strong></div><div class="at-row"><span>Nonce</span><strong>12 bytes (CSPRNG)</strong></div><div class="at-row"><span>Auth Tag</span><strong>16 bytes</strong></div><div class="at-row"><span>Mode</span><strong>AEAD</strong></div></div></div>
+                    <div class="arch-card" data-reveal><div class="arch-n">04</div><div class="arch-title-row"><h3>Metadata Encryption</h3><span class="arch-badge">Zero Knowledge</span></div><p>Filenames, extensions, directory structure, and all metadata are encrypted before upload. Your storage provider receives opaque binary blobs with zero identifying information about what you store.</p><div class="arch-table"><div class="at-row"><span>Filenames</span><strong>Encrypted</strong></div><div class="at-row"><span>Metadata</span><strong>Encrypted</strong></div><div class="at-row"><span>Structure</span><strong>Hidden</strong></div><div class="at-row"><span>Cloud View</span><strong>Ciphertext only</strong></div></div></div>
                 </div>
             </div>
         </section>
 
-        <!-- VIDEO ENCRYPTION -->
+        <!-- ══════ VIDEO ENCRYPTION ══════ -->
         <section class="video-section" id="video-encryption">
             <div class="container">
-                <div class="section-head" data-reveal>
-                    <p class="eyebrow">VIDEO SECURITY</p>
-                    <h2>Large files, fully encrypted.<br>Chunk by chunk.</h2>
-                    <p class="section-desc">Videos are split into 5 MB segments. Each chunk is independently encrypted with its own nonce for maximum cryptographic isolation.</p>
-                </div>
+                <div class="section-head" data-reveal><p class="eyebrow">VIDEO SECURITY</p><h2>Large files, fully encrypted.<br>Chunk by chunk.</h2><p class="section-desc">Videos are split into 5 MB segments. Each chunk is independently encrypted with its own nonce for maximum cryptographic isolation.</p></div>
                 <div class="vid-layout">
                     <div class="vid-steps" data-reveal>
-                        <div class="vst">
-                            <span class="vst-n">01</span>
-                            <div><h4>5 MB Chunking</h4><p>Videos split into 5 MB segments that encrypt and upload in parallel — fast on any connection.</p></div>
-                        </div>
-                        <div class="vst">
-                            <span class="vst-n">02</span>
-                            <div><h4>Per-Chunk Nonce</h4><p>Every segment receives a fresh random 12-byte nonce. Nonce reuse is architecturally impossible.</p></div>
-                        </div>
-                        <div class="vst">
-                            <span class="vst-n">03</span>
-                            <div><h4>Authentication Tag</h4><p>Each chunk carries a 16-byte GCM tag. Any modification — even one bit — triggers immediate failure.</p></div>
-                        </div>
-                        <div class="vst">
-                            <span class="vst-n">04</span>
-                            <div><h4>Secure Reassembly</h4><p>Chunks are verified and decrypted in order, only on your authorised device. Never reassembled in the cloud.</p></div>
-                        </div>
+                        <div class="vst"><span class="vst-n">01</span><div><h4>5 MB Chunking</h4><p>Videos split into 5 MB segments that encrypt and upload in parallel — fast on any connection.</p></div></div>
+                        <div class="vst"><span class="vst-n">02</span><div><h4>Per-Chunk Nonce</h4><p>Every segment receives a fresh random 12-byte nonce. Nonce reuse is architecturally impossible.</p></div></div>
+                        <div class="vst"><span class="vst-n">03</span><div><h4>Authentication Tag</h4><p>Each chunk carries a 16-byte GCM tag. Any modification — even one bit — triggers immediate failure.</p></div></div>
+                        <div class="vst"><span class="vst-n">04</span><div><h4>Secure Reassembly</h4><p>Chunks are verified and decrypted in order, only on your authorised device. Never reassembled in the cloud.</p></div></div>
                     </div>
                     <div class="vid-terminal" data-reveal>
-                        <div class="vt-bar">
-                            <span class="td red"></span><span class="td yellow"></span><span class="td green"></span>
-                            <span class="vt-fname">vault_stream.enc</span>
-                        </div>
+                        <div class="vt-bar"><span class="td red"></span><span class="td yellow"></span><span class="td green"></span><span class="vt-fname">vault_stream.enc</span></div>
                         <div class="vt-body">
                             <div class="chunk-list" id="chunk-list">
                                 <div class="cr"><code>chunk_001.enc</code><span class="cr-ok">AES-256 ✓</span></div>
@@ -473,197 +225,64 @@
                                 <div class="cr"><code>chunk_007.enc</code><span class="cr-ok">AES-256 ✓</span></div>
                                 <div class="cr"><code>chunk_008.enc</code><span class="cr-ok">AES-256 ✓</span></div>
                             </div>
-                            <div class="vt-status">
-                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                                All chunks authenticated
-                            </div>
+                            <div class="vt-status"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>All chunks authenticated</div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- TECH STACK -->
+        <!-- ══════ TECH STACK ══════ -->
         <section class="tech-section" id="technology" data-bg-tint>
             <div class="container">
-                <div class="section-head" data-reveal>
-                    <p class="eyebrow">TECHNOLOGY</p>
-                    <h2>Rust cryptography.<br>No compromises.</h2>
-                    <p class="section-desc">Production-grade Rust crates, bridged to Swift via C ABI. Memory safe, auditable, and fast.</p>
-                </div>
+                <div class="section-head" data-reveal><p class="eyebrow">TECHNOLOGY</p><h2>Rust cryptography.<br>No compromises.</h2><p class="section-desc">Production-grade Rust crates, bridged to Swift via C ABI. Memory safe, auditable, and fast.</p></div>
                 <div class="tech-grid">
-                    <div class="tech-card" data-reveal>
-                        <div class="tc-bar"><span class="td red"></span><span class="td yellow"></span><span class="td green"></span><span class="tc-fname">aes_gcm.rs</span></div>
-                        <div class="tc-body">
-                            <h3>AES-256-GCM</h3>
-                            <div class="tc-code">
-                                <div><span class="kw">use</span> aes_gcm::{Aes256Gcm, Key, Nonce};</div>
-                                <div><span class="kw">let</span> cipher = Aes256Gcm::<span class="fn2">new</span>(key);</div>
-                                <div><span class="cm">// nonce: 12 bytes · tag: 16 bytes</span></div>
-                            </div>
-                            <div class="tc-rows">
-                                <div class="tc-r"><span>Mode</span><strong>Authenticated Encryption</strong></div>
-                                <div class="tc-r"><span>Key</span><strong>32 bytes (256-bit)</strong></div>
-                                <div class="tc-r"><span>Scope</span><strong>Content + Names + Metadata</strong></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tech-card" data-reveal>
-                        <div class="tc-bar"><span class="td red"></span><span class="td yellow"></span><span class="td green"></span><span class="tc-fname">argon2.rs</span></div>
-                        <div class="tc-body">
-                            <h3>Argon2id</h3>
-                            <div class="tc-code">
-                                <div><span class="kw">use</span> argon2::{Argon2, Params};</div>
-                                <div><span class="kw">let</span> p = Params::<span class="fn2">new</span>(131072, 4, 4, <span class="kw">None</span>);</div>
-                                <div><span class="cm">// memory-hard · v1.3 (0x13)</span></div>
-                            </div>
-                            <div class="tc-rows">
-                                <div class="tc-r"><span>Memory</span><strong>131 072 KiB</strong></div>
-                                <div class="tc-r"><span>Iterations</span><strong>4 passes</strong></div>
-                                <div class="tc-r"><span>Purpose</span><strong>Key Derivation</strong></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tech-card" data-reveal>
-                        <div class="tc-bar"><span class="td red"></span><span class="td yellow"></span><span class="td green"></span><span class="tc-fname">rsa_oaep.rs</span></div>
-                        <div class="tc-body">
-                            <h3>RSA-4096 + OAEP</h3>
-                            <div class="tc-code">
-                                <div><span class="kw">use</span> rsa::{RsaPrivateKey, Oaep};</div>
-                                <div><span class="kw">use</span> sha2::Sha256;</div>
-                                <div><span class="cm">// 4096-bit key wrapping</span></div>
-                            </div>
-                            <div class="tc-rows">
-                                <div class="tc-r"><span>Key Size</span><strong>4096 bits</strong></div>
-                                <div class="tc-r"><span>Padding</span><strong>OAEP-SHA256</strong></div>
-                                <div class="tc-r"><span>Use</span><strong>Master Key Wrap</strong></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tech-card" data-reveal>
-                        <div class="tc-bar"><span class="td red"></span><span class="td yellow"></span><span class="td green"></span><span class="tc-fname">chunker.rs</span></div>
-                        <div class="tc-body">
-                            <h3>Chunking Engine</h3>
-                            <div class="tc-code">
-                                <div><span class="kw">const</span> CHUNK: usize = 5 * 1024 * 1024;</div>
-                                <div><span class="kw">let</span> nonce = OsRng.<span class="fn2">gen</span>::&lt;[u8; 12]&gt;();</div>
-                                <div><span class="cm">// unique nonce · OsRng (CSPRNG)</span></div>
-                            </div>
-                            <div class="tc-rows">
-                                <div class="tc-r"><span>Chunk Size</span><strong>5 MB</strong></div>
-                                <div class="tc-r"><span>Nonce Source</span><strong>OsRng (CSPRNG)</strong></div>
-                                <div class="tc-r"><span>Result</span><strong>Parallel Encryption</strong></div>
-                            </div>
-                        </div>
-                    </div>
+                    <div class="tech-card" data-reveal><div class="tc-bar"><span class="td red"></span><span class="td yellow"></span><span class="td green"></span><span class="tc-fname">aes_gcm.rs</span></div><div class="tc-body"><h3>AES-256-GCM</h3><div class="tc-code"><div><span class="kw">use</span> aes_gcm::{Aes256Gcm, Key, Nonce};</div><div><span class="kw">let</span> cipher = Aes256Gcm::<span class="fn2">new</span>(key);</div><div><span class="cm">// nonce: 12 bytes · tag: 16 bytes</span></div></div><div class="tc-rows"><div class="tc-r"><span>Mode</span><strong>Authenticated Encryption</strong></div><div class="tc-r"><span>Key</span><strong>32 bytes (256-bit)</strong></div><div class="tc-r"><span>Scope</span><strong>Content + Names + Metadata</strong></div></div></div></div>
+                    <div class="tech-card" data-reveal><div class="tc-bar"><span class="td red"></span><span class="td yellow"></span><span class="td green"></span><span class="tc-fname">argon2.rs</span></div><div class="tc-body"><h3>Argon2id</h3><div class="tc-code"><div><span class="kw">use</span> argon2::{Argon2, Params};</div><div><span class="kw">let</span> p = Params::<span class="fn2">new</span>(131072, 4, 4, <span class="kw">None</span>);</div><div><span class="cm">// memory-hard · v1.3 (0x13)</span></div></div><div class="tc-rows"><div class="tc-r"><span>Memory</span><strong>131 072 KiB</strong></div><div class="tc-r"><span>Iterations</span><strong>4 passes</strong></div><div class="tc-r"><span>Purpose</span><strong>Key Derivation</strong></div></div></div></div>
+                    <div class="tech-card" data-reveal><div class="tc-bar"><span class="td red"></span><span class="td yellow"></span><span class="td green"></span><span class="tc-fname">rsa_oaep.rs</span></div><div class="tc-body"><h3>RSA-4096 + OAEP</h3><div class="tc-code"><div><span class="kw">use</span> rsa::{RsaPrivateKey, Oaep};</div><div><span class="kw">use</span> sha2::Sha256;</div><div><span class="cm">// 4096-bit key wrapping</span></div></div><div class="tc-rows"><div class="tc-r"><span>Key Size</span><strong>4096 bits</strong></div><div class="tc-r"><span>Padding</span><strong>OAEP-SHA256</strong></div><div class="tc-r"><span>Use</span><strong>Master Key Wrap</strong></div></div></div></div>
+                    <div class="tech-card" data-reveal><div class="tc-bar"><span class="td red"></span><span class="td yellow"></span><span class="td green"></span><span class="tc-fname">chunker.rs</span></div><div class="tc-body"><h3>Chunking Engine</h3><div class="tc-code"><div><span class="kw">const</span> CHUNK: usize = 5 * 1024 * 1024;</div><div><span class="kw">let</span> nonce = OsRng.<span class="fn2">gen</span>::&lt;[u8; 12]&gt;();</div><div><span class="cm">// unique nonce · OsRng (CSPRNG)</span></div></div><div class="tc-rows"><div class="tc-r"><span>Chunk Size</span><strong>5 MB</strong></div><div class="tc-r"><span>Nonce Source</span><strong>OsRng (CSPRNG)</strong></div><div class="tc-r"><span>Result</span><strong>Parallel Encryption</strong></div></div></div></div>
                 </div>
             </div>
         </section>
 
-        <!-- STATS -->
+        <!-- ══════ STATS ══════ -->
         <section class="stats-section">
             <div class="container">
                 <div class="stats-grid">
-                    <div class="stat" data-reveal>
-                        <div class="stat-n"><span class="counter" data-target="256">0</span><sup>bit</sup></div>
-                        <div class="stat-l">AES symmetric encryption key</div>
-                    </div>
+                    <div class="stat" data-reveal><div class="stat-n"><span class="counter" data-target="256">0</span><sup>bit</sup></div><div class="stat-l">AES symmetric encryption key</div></div>
                     <div class="stat-sep"></div>
-                    <div class="stat" data-reveal>
-                        <div class="stat-n"><span class="counter" data-target="4096">0</span><sup>bit</sup></div>
-                        <div class="stat-l">RSA asymmetric key strength</div>
-                    </div>
+                    <div class="stat" data-reveal><div class="stat-n"><span class="counter" data-target="4096">0</span><sup>bit</sup></div><div class="stat-l">RSA asymmetric key strength</div></div>
                     <div class="stat-sep"></div>
-                    <div class="stat" data-reveal>
-                        <div class="stat-n"><span class="counter" data-target="128">0</span><sup>MB</sup></div>
-                        <div class="stat-l">Argon2id memory cost per hash</div>
-                    </div>
+                    <div class="stat" data-reveal><div class="stat-n"><span class="counter" data-target="128">0</span><sup>MB</sup></div><div class="stat-l">Argon2id memory cost per hash</div></div>
                     <div class="stat-sep"></div>
-                    <div class="stat" data-reveal>
-                        <div class="stat-n">0</div>
-                        <div class="stat-l">Files we can ever read</div>
-                    </div>
+                    <div class="stat" data-reveal><div class="stat-n">0</div><div class="stat-l">Files we can ever read</div></div>
                 </div>
             </div>
         </section>
 
-        <!-- WHY -->
+        <!-- ══════ WHY ══════ -->
         <section class="why-section" id="about">
             <div class="container">
-                <div class="section-head" data-reveal>
-                    <p class="eyebrow">WHY 1CRYPTOR</p>
-                    <h2>Designed for people who<br>take privacy seriously.</h2>
-                    <p class="section-desc">Privacy isn't a feature. It's the foundation of every design decision.</p>
-                </div>
+                <div class="section-head" data-reveal><p class="eyebrow">WHY 1CRYPTOR</p><h2>Designed for people who<br>take privacy seriously.</h2><p class="section-desc">Privacy isn't a feature. It's the foundation of every design decision.</p></div>
                 <div class="why-grid">
-                    <div class="why-card" data-reveal>
-                        <div class="wc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></div>
-                        <h3>Zero Knowledge</h3>
-                        <p>We never see your keys or your files. Architecturally enforced — not a policy we could change even if we wanted to.</p>
-                    </div>
-                    <div class="why-card" data-reveal>
-                        <div class="wc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-                        <h3>Bring Your Own Cloud</h3>
-                        <p>Use iCloud Drive or Google Drive — services you already pay for. 1Cryptor is the encryption layer, not the storage.</p>
-                    </div>
-                    <div class="why-card" data-reveal>
-                        <div class="wc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
-                        <h3>Breach Proof</h3>
-                        <p>If our servers were seized tomorrow, attackers would get zero readable data. Your keys exist only on your device.</p>
-                    </div>
-                    <div class="why-card" data-reveal>
-                        <div class="wc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
-                        <h3>Rust Performance</h3>
-                        <p>The encryption engine is memory-safe Rust — blazing fast, auditable, and free of runtime surprises or hidden vulnerabilities.</p>
-                    </div>
-                    <div class="why-card" data-reveal>
-                        <div class="wc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
-                        <h3>Multi-Device Sync</h3>
-                        <p>Access your vault on all your devices. Everything decrypts locally — nothing ever in the clear during transit or at rest.</p>
-                    </div>
-                    <div class="why-card" data-reveal>
-                        <div class="wc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 7H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="1.5" fill="currentColor" stroke="none"/></svg></div>
-                        <h3>Free Starter Vault</h3>
-                        <p>Start with one free vault, no credit card required. Protect your most sensitive files starting today.</p>
-                    </div>
+                    <div class="why-card" data-reveal><div class="wc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></div><h3>Zero Knowledge</h3><p>We never see your keys or your files. Architecturally enforced — not a policy we could change even if we wanted to.</p></div>
+                    <div class="why-card" data-reveal><div class="wc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><h3>Bring Your Own Cloud</h3><p>Use iCloud Drive or Google Drive — services you already pay for. 1Cryptor is the encryption layer, not the storage.</p></div>
+                    <div class="why-card" data-reveal><div class="wc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div><h3>Breach Proof</h3><p>If our servers were seized tomorrow, attackers would get zero readable data. Your keys exist only on your device.</p></div>
+                    <div class="why-card" data-reveal><div class="wc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div><h3>Rust Performance</h3><p>The encryption engine is memory-safe Rust — blazing fast, auditable, and free of runtime surprises or hidden vulnerabilities.</p></div>
+                    <div class="why-card" data-reveal><div class="wc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div><h3>Multi-Device Sync</h3><p>Access your vault on all your devices. Everything decrypts locally — nothing ever in the clear during transit or at rest.</p></div>
+                    <div class="why-card" data-reveal><div class="wc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 7H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="1.5" fill="currentColor" stroke="none"/></svg></div><h3>Free Starter Vault</h3><p>Start with one free vault, no credit card required. Protect your most sensitive files starting today.</p></div>
                 </div>
             </div>
         </section>
 
-        <!-- PRIVACY -->
+        <!-- ══════ PRIVACY ══════ -->
         <section class="priv-section" id="privacy" data-bg-tint>
             <div class="container">
                 <div class="priv-wrap">
-                    <div class="priv-head" data-reveal>
-                        <p class="eyebrow">PRIVACY BY DESIGN</p>
-                        <h2>Privacy by architecture,<br>not by promise.</h2>
-                        <p>Minimal data principles are built into product logic, not marketing slides.</p>
-                    </div>
+                    <div class="priv-head" data-reveal><p class="eyebrow">PRIVACY BY DESIGN</p><h2>Privacy by architecture,<br>not by promise.</h2><p>Minimal data principles are built into product logic, not marketing slides.</p></div>
                     <div class="priv-cols">
-                        <div class="priv-col never" data-reveal>
-                            <div class="pc-head">
-                                <div class="pc-ico red"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg></div>
-                                <h3>We Never Have Access To</h3>
-                            </div>
-                            <ul>
-                                <li>Your passwords or passphrases</li>
-                                <li>Your encryption keys</li>
-                                <li>Your file contents</li>
-                                <li>Your filenames or metadata</li>
-                                <li>Your directory structure</li>
-                            </ul>
-                        </div>
-                        <div class="priv-col may" data-reveal>
-                            <div class="pc-head">
-                                <div class="pc-ico green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div>
-                                <h3>Limited Data We May Process</h3>
-                            </div>
-                            <ul>
-                                <li>Apple/Google account for cloud APIs</li>
-                                <li>Subscription and purchase state</li>
-                                <li>Anonymous crash diagnostics</li>
-                            </ul>
-                        </div>
+                        <div class="priv-col never" data-reveal><div class="pc-head"><div class="pc-ico red"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg></div><h3>We Never Have Access To</h3></div><ul><li>Your passwords or passphrases</li><li>Your encryption keys</li><li>Your file contents</li><li>Your filenames or metadata</li><li>Your directory structure</li></ul></div>
+                        <div class="priv-col may" data-reveal><div class="pc-head"><div class="pc-ico green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div><h3>Limited Data We May Process</h3></div><ul><li>Apple/Google account for cloud APIs</li><li>Subscription and purchase state</li><li>Anonymous crash diagnostics</li></ul></div>
                     </div>
                     <div class="priv-links" data-reveal>
                         <a href="privacy.html" class="priv-link">Full Privacy Policy <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="13" height="13"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
@@ -673,18 +292,14 @@
             </div>
         </section>
 
-        <!-- VS CRYPTOMATOR TEASER -->
+        <!-- ══════ VS CRYPTOMATOR TEASER ══════ -->
         <section class="vs-teaser">
             <div class="container">
                 <div class="vs-teaser-inner" data-reveal>
                     <div class="vt-left">
                         <span class="vt-eyebrow">Honest Comparison</span>
                         <h2>How does 1Cryptor compare<br>to <em>Cryptomator</em>?</h2>
-                        <p>
-                            Both protect your files. But the cryptographic details — Argon2id vs scrypt,
-                            AES-GCM vs AES-CTR, Rust vs Java — make a real difference.
-                            We lay out every difference, with no marketing spin.
-                        </p>
+                        <p>Both protect your files. But the cryptographic details — Argon2id vs scrypt, AES-GCM vs AES-CTR, Rust vs Java — make a real difference. We lay out every difference, with no marketing spin.</p>
                     </div>
                     <div class="vt-right">
                         <a href="vs-cryptomator.html" class="btn-vs magnetic">
@@ -696,43 +311,11 @@
             </div>
         </section>
 
-        <!-- ALL COMPARISONS -->
-        <section class="vs-teaser" style="background: #0a0f0a; margin-top: 40px;">
-            <div class="container">
-                <div class="vs-teaser-inner" data-reveal>
-                    <div class="vt-left">
-                        <span class="vt-eyebrow" style="color: #10B981;">More Comparisons</span>
-                        <h2 style="color: white;">See how 1Cryptor compares<br>to other services</h2>
-                        <p style="color: #a1a1aa;">
-                            We’ve prepared honest, in-depth comparisons with the most popular alternatives.
-                        </p>
-                    </div>
-                    <div class="vt-right" style="display: flex; flex-direction: column; gap: 12px;">
-                        <a href="vs-icloud.html" class="btn-vs magnetic" style="background: #10B981; color: white; border: none;">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                            1Cryptor vs iCloud
-                        </a>
-                        <a href="vs-tresorit.html" class="btn-vs magnetic" style="background: #10B981; color: white; border: none;">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                            1Cryptor vs Tresorit
-                        </a>
-                        <a href="vs-protondrive.html" class="btn-vs magnetic" style="background: #10B981; color: white; border: none;">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                            1Cryptor vs Proton Drive
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- CTA -->
+        <!-- ══════ CTA ══════ -->
         <section class="cta-section" id="download">
             <div class="cta-pattern"></div>
             <div class="container cta-inner" data-reveal>
-                <div class="cta-badge">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                    Military-Grade · Zero Knowledge · On-Device Encryption
-                </div>
+                <div class="cta-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Military-Grade · Zero Knowledge · On-Device Encryption</div>
                 <h2>Encrypt first.<br>Sync second.<br>Sleep easy.</h2>
                 <p>Join people who refuse to hand their private files to strangers in plaintext.</p>
                 <a href="https://apps.apple.com/app/1cryptor/id6759910415" class="btn-cta magnetic">
@@ -747,40 +330,12 @@
     <footer class="footer">
         <div class="container">
             <div class="ft-grid">
-                <div class="ft-brand">
-                    <div class="ft-logo">
-                        <svg width="24" height="24" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="18" stroke="#00622e" stroke-width="2"/><path d="M20 10V16M20 24V30M14 20H10M30 20H26" stroke="#00622e" stroke-width="2" stroke-linecap="round"/><rect x="16" y="16" width="8" height="8" rx="2" stroke="#00622e" stroke-width="2"/></svg>
-                        <span>1Cryptor</span>
-                    </div>
-                    <p>Zero-knowledge file vault. Military-grade encryption. Built with Rust and Swift.</p>
-                    <p class="ft-tagline">Your keys. Your data. Your vault.</p>
-                </div>
-                <div class="ft-col">
-                    <h4>Product</h4>
-                    <a href="#how-it-works">How It Works</a>
-                    <a href="#architecture">Encryption Layers</a>
-                    <a href="#video-encryption">Video Security</a>
-                    <a href="#technology">Technology</a>
-                    <a href="#about">Why 1Cryptor</a>
-                    <a href="#download">Download</a>
-                </div>
-                <div class="ft-col">
-                    <h4>Compare</h4>
-                    <a href="vs-cryptomator.html">1Cryptor vs Cryptomator</a>
-                    <a href="vs-icloud.html">1Cryptor vs iCloud</a>
-                    <a href="vs-tresorit.html">1Cryptor vs Tresorit</a>
-                    <a href="vs-protondrive.html">1Cryptor vs Proton Drive</a>
-                </div>
-                <div class="ft-col">
-                    <h4>Legal &amp; Contact</h4>
-                    <a href="privacy.html">Privacy Policy</a>
-                    <a href="terms.html">Terms of Service</a>
-                    <a href="mailto:contact@1cryptor.com">contact@1cryptor.com</a>
-                </div>
+                <div class="ft-brand"><div class="ft-logo"><svg width="24" height="24" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="18" stroke="#00622e" stroke-width="2"/><path d="M20 10V16M20 24V30M14 20H10M30 20H26" stroke="#00622e" stroke-width="2" stroke-linecap="round"/><rect x="16" y="16" width="8" height="8" rx="2" stroke="#00622e" stroke-width="2"/></svg><span>1Cryptor</span></div><p>Zero-knowledge file vault. Military-grade encryption. Built with Rust and Swift.</p><p class="ft-tagline">Your keys. Your data. Your vault.</p></div>
+                <div class="ft-col"><h4>Product</h4><a href="#how-it-works">How It Works</a><a href="#architecture">Encryption Layers</a><a href="#video-encryption">Video Security</a><a href="#technology">Technology</a><a href="#about">Why 1Cryptor</a><a href="#download">Download</a></div>
+                <div class="ft-col"><h4>Compare &amp; Read</h4><a href="vs-cryptomator.html">1Cryptor vs Cryptomator</a><a href="news.html">News &amp; Updates</a></div>
+                <div class="ft-col"><h4>Legal &amp; Contact</h4><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a><a href="mailto:contact@1cryptor.com">contact@1cryptor.com</a></div>
             </div>
-            <div class="ft-bottom">
-                <p>&copy; 2026 1Cryptor. All rights reserved.</p>
-            </div>
+            <div class="ft-bottom"><p>&copy; 2026 1Cryptor. All rights reserved.</p></div>
         </div>
     </footer>
 

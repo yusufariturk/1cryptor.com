@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The LastPass Disaster: 25 Million Encrypted Vaults Stolen — 1Cryptor</title>
+    <meta name="description" content="In 2022, hackers stole LastPass's entire vault database. Years later, attackers are still brute-forcing stolen master passwords. Here's why 'encrypted cloud storage' isn't always safe — and what to do.">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/blog.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+</head>
+<body>
+
+    <div id="scroll-bar"></div>
+
+    <header class="header" id="header">
+        <div class="hdr-inner">
+            <a href="../index.html" class="logo">
+                <div class="logo-icon">
+                    <svg width="20" height="20" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="18" stroke="#fff" stroke-width="2"/><path d="M20 10V16M20 24V30M14 20H10M30 20H26" stroke="#fff" stroke-width="2" stroke-linecap="round"/><rect x="16" y="16" width="8" height="8" rx="2" stroke="#fff" stroke-width="2"/></svg>
+                </div>
+                <span>1Cryptor</span>
+            </a>
+            <nav class="nav">
+                <a href="../index.html#how-it-works">How It Works</a>
+                <a href="../index.html#architecture">Encryption</a>
+                <a href="../index.html#technology">Technology</a>
+                <a href="../index.html#about">Why Us</a>
+                <a href="../news.html">News</a>
+            </nav>
+            <a href="https://apps.apple.com/app/1cryptor/id6759910415" class="hdr-cta magnetic">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                Download Free
+            </a>
+            <button class="burger" id="burger"><span></span><span></span><span></span></button>
+        </div>
+    </header>
+
+    <div class="mob-overlay" id="mob-overlay">
+        <nav class="mob-nav">
+            <a href="../index.html">Home</a>
+            <a href="../index.html#how-it-works">How It Works</a>
+            <a href="../index.html#architecture">Encryption</a>
+            <a href="../index.html#about">Why Us</a>
+            <a href="../news.html">News</a>
+            <a href="https://apps.apple.com/app/1cryptor/id6759910415" class="mob-cta">Download on the App Store</a>
+        </nav>
+    </div>
+
+    <main>
+
+        <section class="blog-hero">
+            <div class="container">
+                <div class="bh-inner">
+                    <a href="../news.html" class="bh-breadcrumb">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+                        News &amp; Analysis
+                    </a>
+                    <div class="bh-tags">
+                        <span class="bh-tag world">World News</span>
+                        <span class="bh-tag security">Security</span>
+                    </div>
+                    <h1>The LastPass Disaster: 25 Million Encrypted Vaults Stolen — And Still Being Cracked</h1>
+                    <div class="bh-meta">
+                        <span class="bh-meta-item">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+                            December 2022 — Ongoing
+                        </span>
+                        <span class="bh-meta-item">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                            7 min read
+                        </span>
+                        <span class="bh-meta-item">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/></svg>
+                            5 sources
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="alert-bar">
+            <div class="container">
+                <div class="alert-inner">
+                    <div class="alert-ico">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                    </div>
+                    <div>
+                        <div class="alert-label">Ongoing — 2022 to Present</div>
+                        <div class="alert-text">In August and December 2022, hackers breached LastPass twice — stealing the complete encrypted vault database for 25M+ users. By 2024, attackers had cracked enough master passwords to steal over $35M in cryptocurrency from LastPass customers. The breach is still ongoing.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="blog-body">
+            <div class="container">
+                <div class="blog-layout">
+
+                    <article class="blog-article">
+
+                        <h2>What Happened at LastPass</h2>
+
+                        <p>The LastPass breach unfolded in stages, each worse than the last. In <strong>August 2022</strong>, attackers gained access to LastPass's developer environment through a single compromised developer account. LastPass initially characterized this as limited — source code and technical information, nothing customer-facing.</p>
+
+                        <p>That assessment turned out to be badly wrong. Using the developer access obtained in August, the attackers pivoted. By September 2022 they had leveraged that foothold to reach a separate cloud storage environment where LastPass kept customer data backups. LastPass did not detect or disclose this second intrusion for months.</p>
+
+                        <p>In <strong>December 2022</strong>, LastPass finally confirmed what had actually been stolen: the complete encrypted vault database for every customer, along with billing information, names, email addresses, telephone numbers, and IP address logs. Critically, the website URLs stored in each vault — which tell attackers which services a user has accounts with — were <strong>not encrypted</strong>. Attackers could immediately identify which stolen vaults were worth targeting.</p>
+
+                        <p>The stolen vault files are static. Unlike a live login attempt, there is no lockout, no rate limiting, no detection. Attackers can run password-cracking attempts against their local copy of your vault indefinitely, at whatever speed their hardware allows. For accounts with weak master passwords — or accounts where LastPass's default iteration count was low — this made cracking feasible within months.</p>
+
+                        <div class="stat-row">
+                            <div class="stat-item">
+                                <span class="stat-num">25M+</span>
+                                <span class="stat-label">user vault records stolen</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-num">$35M+</span>
+                                <span class="stat-label">stolen from cracked vaults (2024)</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-num">5,000</span>
+                                <span class="stat-label">LastPass default PBKDF2 rounds (weak)</span>
+                            </div>
+                        </div>
+
+                        <div class="sources-grid">
+                            <div class="source-card">
+                                <div class="source-dot"></div>
+                                <div>
+                                    <div class="source-pub">LastPass Blog</div>
+                                    <div class="source-title">Notice of Recent Security Incident</div>
+                                    <div class="source-date">Dec 22, 2022</div>
+                                </div>
+                            </div>
+                            <div class="source-card">
+                                <div class="source-dot"></div>
+                                <div>
+                                    <div class="source-pub">Ars Technica</div>
+                                    <div class="source-title">LastPass says hackers stole customers' password vaults</div>
+                                    <div class="source-date">Dec 23, 2022</div>
+                                </div>
+                            </div>
+                            <div class="source-card">
+                                <div class="source-dot"></div>
+                                <div>
+                                    <div class="source-pub">KrebsOnSecurity</div>
+                                    <div class="source-title">The Many Faces of LastPass Security Failures</div>
+                                    <div class="source-date">Jan 2023</div>
+                                </div>
+                            </div>
+                            <div class="source-card">
+                                <div class="source-dot"></div>
+                                <div>
+                                    <div class="source-pub">Wired</div>
+                                    <div class="source-title">$35M in Crypto Stolen from LastPass Breach Victims</div>
+                                    <div class="source-date">Oct 2024</div>
+                                </div>
+                            </div>
+                            <div class="source-card">
+                                <div class="source-dot"></div>
+                                <div>
+                                    <div class="source-pub">CISA</div>
+                                    <div class="source-title">Advisory on LastPass Breach</div>
+                                    <div class="source-date">Mar 2023</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <blockquote class="pullquote">
+                            <p>"The threat actor was also able to copy a backup of customer vault data from the encrypted storage container."</p>
+                            <cite>— LastPass, December 2022</cite>
+                        </blockquote>
+
+                        <h2>Why "Encrypted Vaults" Got Cracked</h2>
+
+                        <p>LastPass encrypted customer vaults using PBKDF2-SHA256 — a key derivation function that stretches your master password into an encryption key. The critical variable is the iteration count: how many times the function runs before producing the final key. More iterations means more computation required to test each password guess.</p>
+
+                        <p>LastPass's <strong>default was 5,000 iterations</strong>. The current OWASP recommendation for PBKDF2-SHA256 is 600,000 iterations. Accounts created with older versions of LastPass, or accounts that were never migrated to higher settings, had keys derivable at a fraction of the computational cost of a modern standard. On a consumer GPU, testing millions of password guesses per second against a 5,000-iteration vault is entirely feasible.</p>
+
+                        <p>The problem compounds with metadata. Because LastPass left URLs unencrypted, attackers did not need to crack every vault blindly. They could identify which users held cryptocurrency wallets — high-value targets — and concentrate their cracking resources accordingly. The $35M in documented cryptocurrency theft by 2024 represents only the verified cases from a known victim pool.</p>
+
+                        <p>There is also a structural problem with any cloud-based service that holds your encrypted data: <strong>a single breach exposes everyone's data simultaneously</strong>. The attacker does not need to compromise individual users. They compromise the service once, exfiltrate the database, and then work on the stolen copy at their own pace, forever.</p>
+
+                        <div class="warn-box">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                            <div class="warn-box-text">LastPass encrypted your vaults, but used weaker parameters than current standards. With stolen vault files, attackers have unlimited time to brute-force your master password offline — <strong>with no lockouts, no rate limits, and no detection possible.</strong></div>
+                        </div>
+
+                        <div class="why-1cryptor">
+                            <div class="w1c-inner">
+                                <span class="w1c-eyebrow">The Solution</span>
+                                <h2>Why 1Cryptor Uses Argon2id</h2>
+                                <p>1Cryptor was built with the LastPass failure mode in mind. Your encryption key is derived locally using Argon2id — the winner of the Password Hashing Competition and the current gold standard for key derivation. Even if an attacker obtained your encrypted files, cracking them offline would be computationally prohibitive by design.</p>
+
+                                <div class="crypto-specs">
+                                    <div class="cs-item"><span class="cs-label">Key Derivation</span><span class="cs-val">Argon2id</span></div>
+                                    <div class="cs-item"><span class="cs-label">Memory Cost</span><span class="cs-val">131,072 KiB</span></div>
+                                    <div class="cs-item"><span class="cs-label">Iterations</span><span class="cs-val">4</span></div>
+                                    <div class="cs-item"><span class="cs-label">Lanes</span><span class="cs-val">4</span></div>
+                                    <div class="cs-item"><span class="cs-label">Cipher</span><span class="cs-val">AES-256-GCM</span></div>
+                                </div>
+
+                                <div class="w1c-features">
+                                    <div class="w1c-feat">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                                        <span class="w1c-feat-text">Argon2id — PHC-winning KDF standard</span>
+                                    </div>
+                                    <div class="w1c-feat">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                                        <span class="w1c-feat-text">128 MB memory cost per key derivation</span>
+                                    </div>
+                                    <div class="w1c-feat">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                                        <span class="w1c-feat-text">Key derived locally, never on our servers</span>
+                                    </div>
+                                    <div class="w1c-feat">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                                        <span class="w1c-feat-text">Filenames and metadata also encrypted</span>
+                                    </div>
+                                </div>
+
+                                <div class="w1c-cta-row">
+                                    <a href="https://apps.apple.com/app/1cryptor/id6759910415" class="btn-download">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                                        Download 1Cryptor Free
+                                    </a>
+                                    <span class="w1c-note">Free on the App Store. No subscription. Your keys never leave your device.</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <p>The memory-hardness of Argon2id is the key distinction. PBKDF2 can be parallelized across thousands of GPU cores simultaneously — each core independently tests password guesses. Argon2id's 128 MB memory requirement means each parallel attempt requires 128 MB of RAM. A GPU with 8 GB of memory can run fewer than 64 simultaneous attacks. The same hardware that cracks PBKDF2 vaults at millions of attempts per second is bottlenecked to thousands of attempts per second against Argon2id — a difference that turns a feasible attack into an impractical one.</p>
+
+                        <p>1Cryptor also encrypts file and folder names, not just file contents. Even if your encrypted files were somehow obtained, an attacker would learn nothing about what you're protecting. There is no metadata to prioritize, no directory structure to analyze — only opaque ciphertext.</p>
+
+                    </article>
+
+                    <aside class="blog-sidebar">
+                        <div class="sidebar-card">
+                            <h4>Also Read</h4>
+                            <a href="uk-icloud-backdoor.html" class="sidebar-link">
+                                <div class="sl-dot"></div>
+                                <span class="sl-text">UK Forces Apple to Disable iCloud End-to-End Encryption</span>
+                            </a>
+                            <a href="microsoft-365-banned.html" class="sidebar-link">
+                                <div class="sl-dot"></div>
+                                <span class="sl-text">Microsoft 365 Banned in German Schools Over Privacy Violations</span>
+                            </a>
+                            <a href="us-cloud-act.html" class="sidebar-link">
+                                <div class="sl-dot"></div>
+                                <span class="sl-text">The US CLOUD Act: How America Accesses Your Data Abroad</span>
+                            </a>
+                        </div>
+
+                        <div class="sidebar-cta">
+                            <p>Argon2id key derivation. Encrypted before upload. No single point of failure.</p>
+                            <a href="https://apps.apple.com/app/1cryptor/id6759910415" class="btn-download">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                                Download Free
+                            </a>
+                        </div>
+                    </aside>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="related-section">
+            <div class="container">
+                <span class="section-label">Related Articles</span>
+                <div class="related-grid">
+                    <a href="uk-icloud-backdoor.html" class="related-card">
+                        <span class="rc-tag">Privacy</span>
+                        <h4>UK Government Forces Apple to Disable iCloud End-to-End Encryption</h4>
+                        <p>How a secret government order stripped E2E encryption from 26 million iCloud accounts overnight.</p>
+                    </a>
+                    <a href="microsoft-365-banned.html" class="related-card">
+                        <span class="rc-tag">Privacy</span>
+                        <h4>Microsoft 365 Banned in German Schools Over Privacy Violations</h4>
+                        <p>How EU regulators ruled that Microsoft's cloud services violate GDPR — and what it means for every cloud user.</p>
+                    </a>
+                    <a href="us-cloud-act.html" class="related-card">
+                        <span class="rc-tag">World News</span>
+                        <h4>The US CLOUD Act: America's Tool for Global Data Access</h4>
+                        <p>How a 2018 US law allows American authorities to demand data stored anywhere in the world.</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="ft-grid">
+                <div class="ft-brand">
+                    <div class="ft-logo">
+                        <svg width="24" height="24" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="18" stroke="#00622e" stroke-width="2"/><path d="M20 10V16M20 24V30M14 20H10M30 20H26" stroke="#00622e" stroke-width="2" stroke-linecap="round"/><rect x="16" y="16" width="8" height="8" rx="2" stroke="#00622e" stroke-width="2"/></svg>
+                        <span>1Cryptor</span>
+                    </div>
+                    <p>Zero-knowledge file vault. Military-grade encryption. Built with Rust and Swift.</p>
+                    <p class="ft-tagline">Your keys. Your data. Your vault.</p>
+                </div>
+                <div class="ft-col">
+                    <h4>Product</h4>
+                    <a href="../index.html#how-it-works">How It Works</a>
+                    <a href="../index.html#architecture">Encryption Layers</a>
+                    <a href="../index.html#technology">Technology</a>
+                    <a href="../index.html#about">Why 1Cryptor</a>
+                </div>
+                <div class="ft-col">
+                    <h4>Compare &amp; Read</h4>
+                    <a href="../vs-cryptomator.html">vs Cryptomator</a>
+                    <a href="../news.html">News &amp; Updates</a>
+                </div>
+                <div class="ft-col">
+                    <h4>Legal</h4>
+                    <a href="../privacy.html">Privacy Policy</a>
+                    <a href="../terms.html">Terms of Service</a>
+                    <a href="mailto:contact@1cryptor.com">contact@1cryptor.com</a>
+                </div>
+            </div>
+            <div class="ft-bottom"><p>&copy; 2026 1Cryptor. All rights reserved.</p></div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+
+</body>
+</html>

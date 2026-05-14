@@ -77,6 +77,7 @@
                     <button class="fb-btn" data-filter="security">Security</button>
                     <button class="fb-btn" data-filter="engineering">Engineering</button>
                     <button class="fb-btn" data-filter="privacy">Privacy</button>
+                    <button class="fb-btn" data-filter="world">World News</button>
                 </div>
             </div>
         </div>
@@ -108,7 +109,7 @@
                             <span class="art-read">5 min read</span>
                         </div>
                         <h2>1Cryptor 2.0: Deeper Argon2id Tuning, Faster Rust Engine, and Native Files App Support</h2>
-                        <p>Today we're releasing 1Cryptor 2.0 — the most significant update since launch. The core cryptographic engine has been re-tuned with Argon2id parameters raised to 131,072 KiB of memory and 4 iterations, raising the brute-force cost floor by an order of magnitude. The Rust engine now parallelises chunk encryption across CPU cores, and the iOS FileProvider extension has been rewritten for zero-latency file access directly from the Files app.</p>
+                        <p>Today we’re releasing 1Cryptor 2.0 — the most significant update since launch. The core cryptographic engine has been re-tuned with Argon2id parameters raised to 131,072 KiB of memory and 4 iterations, raising the brute-force cost floor by an order of magnitude. The Rust engine now parallelises chunk encryption across CPU cores, and the iOS FileProvider extension has been rewritten for zero-latency file access directly from the Files app.</p>
                         <div class="fc-spec-row">
                             <div class="fcs-item"><span class="fcs-label">Argon2id Memory</span><span class="fcs-val">131,072 KiB</span></div>
                             <div class="fcs-item"><span class="fcs-label">Iterations</span><span class="fcs-val">4 passes</span></div>
@@ -195,7 +196,7 @@
                         <div class="ac-body">
                             <div class="ac-meta"><span class="art-tag security">Security</span><span class="art-date">Jan 15, 2026</span></div>
                             <h3>Threat Modelling a Zero-Knowledge File Vault: What We Protect Against</h3>
-                            <p>Our STRIDE analysis — spoofing, tampering, repudiation, information disclosure, denial of service, elevation of privilege — and how each is addressed in 1Cryptor's architecture.</p>
+                            <p>Our STRIDE analysis — spoofing, tampering, repudiation, information disclosure, denial of service, elevation of privilege — and how each is addressed in 1Cryptor’s architecture.</p>
                             <a href="#" class="art-link">Read more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="12" height="12"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
                         </div>
                     </article>
@@ -207,6 +208,141 @@
                             <h3>5 MB Chunks: The Engineering Tradeoff Between Overhead and Isolation</h3>
                             <p>Why we chose 5 MB as our chunk size — the cryptographic isolation benefits, the performance characteristics on modern hardware, and how it compares to fine-grained alternatives.</p>
                             <a href="#" class="art-link">Read more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="12" height="12"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                        </div>
+                    </article>
+
+                </div>
+
+                <div class="world-news-banner" data-reveal>
+                    <div class="wnb-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                    </div>
+                    <div class="wnb-text">
+                        <h2>World Security News</h2>
+                        <p>Real incidents. Verified sources. These events explain why zero-knowledge encryption matters — and why 1Cryptor was built.</p>
+                    </div>
+                    <div class="wnb-count"><span class="wnb-dot"></span>10 Analysis Reports</div>
+                </div>
+
+                <div class="articles-grid" id="world-articles-grid">
+
+                    <article class="art-card" data-reveal data-category="world">
+                        <div class="ac-visual world">
+                            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="24" cy="24" r="16"/><path d="M8 24h32M24 8c-4 4-7 9-7 16s3 12 7 16M24 8c4 4 7 9 7 16s-3 12-7 16"/><rect x="18" y="20" width="12" height="10" rx="2"/><path d="M20 20v-3a4 4 0 0 1 8 0v3"/></svg>
+                        </div>
+                        <div class="ac-body">
+                            <div class="ac-meta"><span class="art-tag world">World</span><span class="art-tag privacy">Privacy</span><span class="art-date">Feb 2025</span></div>
+                            <h3>UK Forces Apple to Disable iCloud Encryption for British Users</h3>
+                            <p>The UK government secretly ordered Apple to create an encryption backdoor into iCloud — forcing Apple to withdraw Advanced Data Protection from the entire UK rather than comply.</p>
+                            <a href="blog/uk-icloud-backdoor.html" class="art-link">Read full analysis <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="12" height="12"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                        </div>
+                    </article>
+
+                    <article class="art-card" data-reveal data-category="world">
+                        <div class="ac-visual world">
+                            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="10" y="22" width="28" height="20" rx="3"/><path d="M16 22V16a8 8 0 0 1 16 0v6"/><circle cx="24" cy="32" r="2.5" fill="currentColor" stroke="none"/><path d="M30 10l4-4M34 14l-4-4" stroke-linecap="round" stroke-width="2"/></svg>
+                        </div>
+                        <div class="ac-body">
+                            <div class="ac-meta"><span class="art-tag world">World</span><span class="art-tag security">Security</span><span class="art-date">2022–2023</span></div>
+                            <h3>LastPass Breached: 25 Million Vaults Stolen, $35M+ in Crypto Lost</h3>
+                            <p>Attackers stole 25 million encrypted vault backups from LastPass, then cracked thousands of them — draining over $35 million in cryptocurrency from victims with weak master passwords.</p>
+                            <a href="blog/lastpass-breach.html" class="art-link">Read full analysis <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="12" height="12"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                        </div>
+                    </article>
+
+                    <article class="art-card" data-reveal data-category="world">
+                        <div class="ac-visual world">
+                            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 42h40"/><rect x="12" y="20" width="24" height="22"/><path d="M8 20l16-14 16 14"/><rect x="19" y="30" width="10" height="12"/><path d="M28 6l5 5M33 6l-5 5" stroke-linecap="round" stroke-width="2"/></svg>
+                        </div>
+                        <div class="ac-body">
+                            <div class="ac-meta"><span class="art-tag world">World</span><span class="art-tag privacy">Privacy</span><span class="art-date">2023–2024</span></div>
+                            <h3>Germany Bans Microsoft 365 in Schools Over GDPR Violations</h3>
+                            <p>All 16 German states declared Microsoft 365 illegal in schools under GDPR — citing unacceptable transfers of student data to US servers, with no compliant alternative offered by Microsoft.</p>
+                            <a href="blog/microsoft-365-banned.html" class="art-link">Read full analysis <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="12" height="12"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                        </div>
+                    </article>
+
+                    <article class="art-card" data-reveal data-category="world">
+                        <div class="ac-visual world">
+                            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 38H10a8 8 0 1 1 2-15.7A12 12 0 1 1 36 28h2a6 6 0 0 1 0 12H18"/><circle cx="24" cy="26" r="4"/><path d="M24 22v-4M24 34v-4M20 26h-4M32 26h-4" stroke-linecap="round"/></svg>
+                        </div>
+                        <div class="ac-body">
+                            <div class="ac-meta"><span class="art-tag world">World</span><span class="art-tag privacy">Privacy</span><span class="art-date">Jul 2023</span></div>
+                            <h3>Google Uses Your Drive Files to Train Its AI — Without a Real Opt-Out</h3>
+                            <p>Google’s 2023 privacy policy update states that content you upload to Drive, Docs, and Photos can be used to train AI models — affecting 3 billion users with no meaningful way to refuse.</p>
+                            <a href="blog/google-drive-ai.html" class="art-link">Read full analysis <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="12" height="12"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                        </div>
+                    </article>
+
+                    <article class="art-card" data-reveal data-category="world">
+                        <div class="ac-visual world">
+                            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 38h36M24 10v28M4 20l20-14 20 14"/><path d="M14 38V26a4 4 0 0 1 8 0v12M26 38V26a4 4 0 0 1 8 0v12"/><circle cx="24" cy="6" r="3"/></svg>
+                        </div>
+                        <div class="ac-body">
+                            <div class="ac-meta"><span class="art-tag world">World</span><span class="art-tag privacy">Privacy</span><span class="art-date">2018 Law</span></div>
+                            <h3>The US CLOUD Act: How American Authorities Can Demand Your Data Worldwide</h3>
+                            <p>The 2018 CLOUD Act empowers US law enforcement to compel any American tech company — Apple, Google, Dropbox, Microsoft — to surrender your data regardless of where it is stored.</p>
+                            <a href="blog/us-cloud-act.html" class="art-link">Read full analysis <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="12" height="12"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                        </div>
+                    </article>
+
+                    <article class="art-card" data-reveal data-category="world">
+                        <div class="ac-visual world">
+                            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M24 6L6 16v16c0 7.7 7.7 15.4 18 18 10.3-2.6 18-10.3 18-18V16L24 6z"/><path d="M17 25l5 5 10-10" stroke-linecap="round" stroke-linejoin="round"/><path d="M30 8l4 4M34 8l-4 4" stroke-linecap="round" stroke-width="2"/></svg>
+                        </div>
+                        <div class="ac-body">
+                            <div class="ac-meta"><span class="art-tag world">World</span><span class="art-tag security">Security</span><span class="art-date">Apr 2024</span></div>
+                            <h3>Dropbox Sign Breach: 700,000+ Users’ Tokens and API Keys Stolen</h3>
+                            <p>Attackers breached Dropbox Sign’s production environment in April 2024, exfiltrating authentication tokens, API keys, MFA secrets, and the personal data of over 700,000 users.</p>
+                            <a href="blog/dropbox-breach-2024.html" class="art-link">Read full analysis <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="12" height="12"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                        </div>
+                    </article>
+
+                    <article class="art-card" data-reveal data-category="world">
+                        <div class="ac-visual world">
+                            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 24C4 24 12 10 24 10s20 14 20 14-8 14-20 14S4 24 4 24z"/><circle cx="24" cy="24" r="6"/><circle cx="24" cy="24" r="2.5" fill="currentColor" stroke="none"/><path d="M6 14l4 4M42 14l-4 4M6 34l4-4M42 34l-4-4" stroke-linecap="round"/></svg>
+                        </div>
+                        <div class="ac-body">
+                            <div class="ac-meta"><span class="art-tag world">World</span><span class="art-tag privacy">Privacy</span><span class="art-date">2013 / 2024</span></div>
+                            <h3>NSA PRISM: Mass Surveillance of Apple, Google &amp; Microsoft — Still Active in 2024</h3>
+                            <p>Since 2007 the NSA’s PRISM program has collected data directly from 9 major tech companies. Section 702 — its legal authority — was renewed by Congress again in April 2024.</p>
+                            <a href="blog/nsa-prism.html" class="art-link">Read full analysis <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="12" height="12"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                        </div>
+                    </article>
+
+                    <article class="art-card" data-reveal data-category="world">
+                        <div class="ac-visual world">
+                            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 10h32a2 2 0 0 1 2 2v20a2 2 0 0 1-2 2H16l-8 6V12a2 2 0 0 1 2-2z"/><path d="M16 22h16M16 28h10"/><path d="M34 8v-3M38 12l3-3" stroke-linecap="round" stroke-width="2"/></svg>
+                        </div>
+                        <div class="ac-body">
+                            <div class="ac-meta"><span class="art-tag world">World</span><span class="art-tag privacy">Privacy</span><span class="art-date">2022–2024</span></div>
+                            <h3>EU Chat Control: Brussels Wants to Scan Every Private Message You Send</h3>
+                            <p>The EU’s proposed Chat Control regulation would require all messaging platforms to scan private messages for prohibited content — breaking end-to-end encryption for 450 million Europeans.</p>
+                            <a href="blog/eu-chat-control.html" class="art-link">Read full analysis <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="12" height="12"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                        </div>
+                    </article>
+
+                    <article class="art-card" data-reveal data-category="world">
+                        <div class="ac-visual world">
+                            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="14" y="4" width="20" height="34" rx="4"/><path d="M20 35h8"/><path d="M28 14a8 8 0 0 1 8 8"/><path d="M36 18l4-4M40 22l-4-4" stroke-linecap="round" stroke-width="1.8"/></svg>
+                        </div>
+                        <div class="ac-body">
+                            <div class="ac-meta"><span class="art-tag world">World</span><span class="art-tag privacy">Privacy</span><span class="art-date">Ongoing</span></div>
+                            <h3>iCloud Backup Is Not End-to-End Encrypted by Default — Apple Can Read It</h3>
+                            <p>Most iCloud backups — photos, messages, device state, health data — remain accessible to Apple unless you manually enable ADP. Apple has complied with thousands of government data requests.</p>
+                            <a href="blog/icloud-backup-encryption.html" class="art-link">Read full analysis <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="12" height="12"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                        </div>
+                    </article>
+
+                    <article class="art-card" data-reveal data-category="world">
+                        <div class="ac-visual world">
+                            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M24 6a18 18 0 1 0 15.6 27L44 42l-9-4.4A18 18 0 0 0 24 6z"/><path d="M16 24h16M16 30h8"/><circle cx="34" cy="14" r="6"/><path d="M31 14h6M34 11v6" stroke-linecap="round" stroke-width="2"/></svg>
+                        </div>
+                        <div class="ac-body">
+                            <div class="ac-meta"><span class="art-tag world">World</span><span class="art-tag privacy">Privacy</span><span class="art-date">2021 Policy</span></div>
+                            <h3>WhatsApp Collects 18+ Metadata Categories and Shares Them with Meta</h3>
+                            <p>Despite end-to-end encrypted messages, WhatsApp shares your contacts, precise location, device identifiers, usage patterns, and 18+ other data categories with Facebook’s advertising platform.</p>
+                            <a href="blog/whatsapp-metadata.html" class="art-link">Read full analysis <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="12" height="12"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
                         </div>
                     </article>
 

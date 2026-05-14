@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iCloud Backup Is Not End-to-End Encrypted by Default — And Apple Has a Key to Your Data — 1Cryptor Blog</title>
+    <meta name="description" content="Most iCloud users don't know that their iCloud backup is not end-to-end encrypted by default. Apple holds a key and can access this data. Here's what you need to know.">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/blog.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+</head>
+<body>
+<div id="scroll-bar"></div>
+<header class="header" id="header"><div class="hdr-inner">
+    <a href="../index.html" class="logo"><div class="logo-icon"><svg width="20" height="20" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="18" stroke="#fff" stroke-width="2"/><path d="M20 10V16M20 24V30M14 20H10M30 20H26" stroke="#fff" stroke-width="2" stroke-linecap="round"/><rect x="16" y="16" width="8" height="8" rx="2" stroke="#fff" stroke-width="2"/></svg></div><span>1Cryptor</span></a>
+    <nav class="nav"><a href="../index.html#how-it-works">How It Works</a><a href="../index.html#architecture">Encryption</a><a href="../index.html#technology">Technology</a><a href="../index.html#about">Why Us</a><a href="../news.html" class="nav-active">News</a></nav>
+    <a href="https://apps.apple.com/app/1cryptor/id6759910415" class="hdr-cta magnetic"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>Download Free</a>
+    <button class="burger" id="burger"><span></span><span></span><span></span></button>
+</div></header>
+<div class="mob-overlay" id="mob-overlay"><nav class="mob-nav"><a href="../index.html">Home</a><a href="../index.html#how-it-works">How It Works</a><a href="../index.html#architecture">Encryption</a><a href="../index.html#about">Why Us</a><a href="../news.html">News</a><a href="https://apps.apple.com/app/1cryptor/id6759910415" class="mob-cta">Download on the App Store</a></nav></div>
+<main>
+    <section class="blog-hero"><div class="container"><div class="bh-inner">
+        <a href="../news.html" class="bh-breadcrumb"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>Back to News</a>
+        <div class="bh-tags"><span class="bh-tag privacy">Privacy</span><span class="bh-tag security">Security</span></div>
+        <h1>iCloud Backup Is Not End-to-End Encrypted by Default — And Apple Has a Key to Your Data</h1>
+        <div class="bh-meta">
+            <span class="bh-meta-item"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Ongoing</span>
+            <span class="bh-meta-item"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>5 min read</span>
+            <span class="bh-meta-item"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>4 sources</span>
+        </div>
+    </div></div></section>
+    <div class="alert-bar"><div class="container"><div class="alert-inner">
+        <div class="alert-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+        <div><div class="alert-label">Default iCloud Configuration</div><div class="alert-text">By default, iCloud Backup is not end-to-end encrypted. Apple manages the encryption keys — meaning Apple can access your iPhone backup, including your photos, messages (even iMessages), app data, and device settings. Law enforcement can legally compel Apple to provide this data.</div></div>
+    </div></div></div>
+    <section class="blog-body"><div class="container"><div class="blog-layout">
+        <article class="blog-article">
+            <h2>What iCloud Actually Encrypts — and What It Doesn't</h2>
+            <p>iCloud operates three tiers of data protection. The first is <strong>in-transit encryption</strong>: standard HTTPS. The second tier is <strong>standard data protection</strong> — Apple's default. Your data is encrypted at rest on Apple's servers, but Apple manages the encryption keys. The third tier is <strong>Advanced Data Protection (ADP)</strong> — end-to-end encryption where only your devices hold the keys. But ADP is <em>not enabled by default</em> and was completely disabled for UK users following the February 2025 government order.</p>
+            <p>The most surprising gap concerns iMessages. Apple markets iMessage as end-to-end encrypted — and the <em>transport layer</em> is. But if you have iCloud Backup enabled (the default), a copy of your complete message history is stored in your iCloud Backup, encrypted with Apple's keys. The E2E encryption of the message in transit is entirely bypassed by a backup copy Apple can read.</p>
+            <div class="stat-row">
+                <div class="stat-item"><span class="stat-num">23</span><span class="stat-label">categories protected by ADP (if enabled)</span></div>
+                <div class="stat-item"><span class="stat-num">0</span><span class="stat-label">UK users who can enable ADP (banned Feb 2025)</span></div>
+                <div class="stat-item"><span class="stat-num">1B+</span><span class="stat-label">iPhone users with iCloud backup enabled by default</span></div>
+            </div>
+            <div class="sources-grid">
+                <div class="source-card"><div class="source-dot"></div><div><div class="source-pub">Apple Support</div><div class="source-title">iCloud data security overview</div><div class="source-date">2024</div></div></div>
+                <div class="source-card"><div class="source-dot"></div><div><div class="source-pub">Apple Support</div><div class="source-title">Advanced Data Protection for iCloud</div><div class="source-date">2024</div></div></div>
+                <div class="source-card"><div class="source-dot"></div><div><div class="source-pub">Electronic Frontier Foundation</div><div class="source-title">iCloud Security: What Apple Can and Cannot See</div><div class="source-date">2023</div></div></div>
+                <div class="source-card"><div class="source-dot"></div><div><div class="source-pub">The Intercept</div><div class="source-title">Apple Dropped Plans for iPhone Encryption After FBI Complained</div><div class="source-date">2020</div></div></div>
+            </div>
+            <blockquote class="pullquote"><p>"iCloud backups include a copy of the encryption keys protecting the messages on your device. When Apple receives a valid legal request, we provide the keys needed to decrypt those backups."</p><cite>— Apple Law Enforcement Guidelines</cite></blockquote>
+            <h2>The FBI Factor</h2>
+            <p>In 2020, Reuters reported that Apple had abandoned a plan to offer fully end-to-end encrypted iCloud backups after the FBI raised objections. Apple made a business and political calculation, and privacy lost. Apple regularly receives legal requests for iCloud data from law enforcement and regularly complies — including iCloud Backup contents, iCloud Photos, iMessage history stored in backup, notes, contacts, and location data.</p>
+            <div class="warn-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg><div class="warn-box-text">Even if you have iMessage enabled with E2E encryption, turning on iCloud Backup causes Apple to store a copy of your message history encrypted with Apple's keys. This backup is accessible to Apple and law enforcement — silently defeating the E2E encryption you thought protected your messages.</div></div>
+            <div class="why-1cryptor"><div class="w1c-inner">
+                <span class="w1c-eyebrow">The Solution</span>
+                <h2>How 1Cryptor Adds the Encryption Layer Apple Doesn't</h2>
+                <p>1Cryptor works at a different layer from iCloud Backup. Rather than relying on Apple to encrypt your files with keys they control, 1Cryptor encrypts files on your device before they are stored anywhere — including iCloud Drive. Apple's servers receive AES-256-GCM ciphertext. Apple's key, Apple's backup, and any legal request to Apple produces nothing but encrypted data that cannot be decrypted without your passphrase.</p>
+                <div class="crypto-specs">
+                    <div class="cs-item"><span class="cs-label">Cipher</span><span class="cs-val">AES-256-GCM</span></div>
+                    <div class="cs-item"><span class="cs-label">Key Derivation</span><span class="cs-val">Argon2id</span></div>
+                    <div class="cs-item"><span class="cs-label">Cloud Compatibility</span><span class="cs-val">Works with iCloud Drive</span></div>
+                    <div class="cs-item"><span class="cs-label">Apple Key Access</span><span class="cs-val">Zero</span></div>
+                </div>
+                <div class="w1c-features">
+                    <div class="w1c-feat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span class="w1c-feat-text">True client-side encryption — Apple key irrelevant</span></div>
+                    <div class="w1c-feat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span class="w1c-feat-text">Works with iCloud Drive, Dropbox, Google Drive</span></div>
+                    <div class="w1c-feat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span class="w1c-feat-text">Argon2id passphrase key — never stored by Apple</span></div>
+                    <div class="w1c-feat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span class="w1c-feat-text">Your files, fully encrypted, in any cloud</span></div>
+                </div>
+                <div class="w1c-cta-row">
+                    <a href="https://apps.apple.com/app/1cryptor/id6759910415" class="btn-download"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>Download 1Cryptor Free</a>
+                    <span class="w1c-note">Free on the App Store. No subscription. Your keys never leave your device.</span>
+                </div>
+            </div></div>
+        </article>
+        <aside class="blog-sidebar">
+            <div class="sidebar-card"><h4>Also Read</h4>
+                <a href="uk-icloud-backdoor.html" class="sidebar-link"><div class="sl-dot"></div><span class="sl-text">UK Forces Apple to Disable iCloud End-to-End Encryption</span></a>
+                <a href="nsa-prism.html" class="sidebar-link"><div class="sl-dot"></div><span class="sl-text">NSA PRISM: The Mass Surveillance Program That Never Ended</span></a>
+                <a href="whatsapp-metadata.html" class="sidebar-link"><div class="sl-dot"></div><span class="sl-text">WhatsApp Encrypts Your Messages — But Meta Knows Everything Else</span></a>
+            </div>
+            <div class="sidebar-cta"><p>Encrypt your sensitive files before iCloud ever sees them. Apple's key is irrelevant.</p><a href="https://apps.apple.com/app/1cryptor/id6759910415" class="btn-download"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>Download Free</a></div>
+        </aside>
+    </div></div></section>
+    <section class="related-section"><div class="container"><span class="section-label">Related Articles</span>
+        <div class="related-grid">
+            <a href="uk-icloud-backdoor.html" class="related-card"><span class="rc-tag">Privacy</span><h4>UK Government Forces Apple to Disable iCloud End-to-End Encryption</h4><p>How a secret government order stripped E2E encryption from 26 million iCloud accounts overnight.</p></a>
+            <a href="nsa-prism.html" class="related-card"><span class="rc-tag">World News</span><h4>NSA PRISM: The Mass Surveillance Program That Never Ended</h4><p>Snowden revealed it in 2013. Congress renewed it in 2024 with expanded powers covering cloud storage.</p></a>
+            <a href="whatsapp-metadata.html" class="related-card"><span class="rc-tag">Privacy</span><h4>WhatsApp Encrypts Your Messages — But Meta Knows Everything Else</h4><p>Message content is private. Who you talk to, when, and how often is collected.</p></a>
+        </div>
+    </div></section>
+</main>
+<footer class="footer"><div class="container"><div class="ft-grid">
+    <div class="ft-brand"><div class="ft-logo"><svg width="24" height="24" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="18" stroke="#00622e" stroke-width="2"/><path d="M20 10V16M20 24V30M14 20H10M30 20H26" stroke="#00622e" stroke-width="2" stroke-linecap="round"/><rect x="16" y="16" width="8" height="8" rx="2" stroke="#00622e" stroke-width="2"/></svg><span>1Cryptor</span></div><p>Zero-knowledge file vault. Military-grade encryption. Built with Rust and Swift.</p><p class="ft-tagline">Your keys. Your data. Your vault.</p></div>
+    <div class="ft-col"><h4>Product</h4><a href="../index.html#how-it-works">How It Works</a><a href="../index.html#architecture">Encryption Layers</a><a href="../index.html#technology">Technology</a><a href="../index.html#about">Why 1Cryptor</a></div>
+    <div class="ft-col"><h4>Compare &amp; Read</h4><a href="../vs-cryptomator.html">vs Cryptomator</a><a href="../news.html">News &amp; Updates</a></div>
+    <div class="ft-col"><h4>Legal</h4><a href="../privacy.html">Privacy Policy</a><a href="../terms.html">Terms of Service</a><a href="mailto:contact@1cryptor.com">contact@1cryptor.com</a></div>
+</div><div class="ft-bottom"><p>&copy; 2026 1Cryptor. All rights reserved.</p></div></div></footer>
+<button class="fab" id="fab" aria-label="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+<script src="../js/main.js"></script>
+</body>
+</html>
